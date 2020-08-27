@@ -1,6 +1,7 @@
 $(document).ready(function(){
     var $util = $("#header .util");
     var $mUtil = $("#header .mGnbWrap .mUtil");
+    var $loading = $("#loading");
     var $gnb = $("#gnb");
     var $mGnb = $("#mGnb");
     var $mGnbBtn = $(".btn-gnb");
@@ -41,6 +42,7 @@ $(document).ready(function(){
         setTimeout(function(){
             scrollTo(0,0);
         },100);
+        $loading.fadeOut();
     });
 
     $(window).on("scroll",function(){
