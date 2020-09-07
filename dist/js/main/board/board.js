@@ -2,7 +2,7 @@ $(document).ready(function(){
     var $boardTab = $("#board .board-post dl dt a");
     var $boardList = $("#board .board-post dl");
 
-    initBoardData();
+    loadBoardData();
 
     $boardTab.on("click focus",function(e){
         e.preventDefault();
@@ -20,7 +20,7 @@ $(document).ready(function(){
 
     //게시판 데이터 호출
     //tab이 추가되어도 코드수정이 없도록 구현
-    function initBoardData(){
+    function loadBoardData(){
         var tabCount = $("#board .board-post dl").length;
         var tabMenu = [];
 
@@ -32,7 +32,6 @@ $(document).ready(function(){
         $.ajax({
             url : "data/main/board/data/board.json",
             dataType : "json",
-            beforeSend : function(){},
             success : function(data){
                 for(var i=0; i<tabCount; i++){
                     var jsonData = data[tabMenu[i]];
@@ -48,8 +47,17 @@ $(document).ready(function(){
                     }
                 }
             },
-            error : function(){}
+            error : function(){
+                for(var i=0; i<tabCount; i++){
+                    $("#board .board-post dl").eq(i).children("dd")
+                    .append(
+                        $("<li>")
+                            .append(
+                                $("<a>").attr("href","javascript:;").text("데이터를 불러오지 못했습니다.").css("cursor","text")
+                            )
+                    )
+                }
+            }
         });
     }
-
 })

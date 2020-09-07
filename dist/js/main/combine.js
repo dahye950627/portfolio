@@ -1,62 +1,4 @@
 $(document).ready(function(){
-    
-})
-$(document).ready(function(){
-    var $boardTab = $("#board .board-post dl dt a");
-    var $boardList = $("#board .board-post dl");
-
-    initBoardData();
-
-    $boardTab.on("click focus",function(e){
-        e.preventDefault();
-        var target = $(this).attr("href");
-        var isActive = $(this).hasClass("on");
-
-        if(!isActive){
-            $boardTab.removeClass("on");
-            $(this).addClass("on");
-
-            $boardList.children("dd").removeClass("on");
-            $(target).addClass("on");
-        }
-    });
-
-    //게시판 데이터 호출
-    //tab이 추가되어도 코드수정이 없도록 구현
-    function initBoardData(){
-        var tabCount = $("#board .board-post dl").length;
-        var tabMenu = [];
-
-        for(var i=0; i<tabCount; i++){
-            var menu = $("#board .board-post dl").eq(i).find("a").data("tab");
-            tabMenu.push(menu);
-        }
-
-        $.ajax({
-            url : "data/main/board/data/board.json",
-            dataType : "json",
-            beforeSend : function(){},
-            success : function(data){
-                for(var i=0; i<tabCount; i++){
-                    var jsonData = data[tabMenu[i]];
-                    for(var j=0; j<jsonData.length; j++){
-                        $("#board .board-post dl").eq(i).children("dd")
-                        .append(
-                            $("<li>")
-                                .append(
-                                    $("<a>").attr("href","javascript:;").text(jsonData[j].content),
-                                    $("<span>").text(jsonData[j].date)
-                                )
-                        )
-                    }
-                }
-            },
-            error : function(){}
-        });
-    }
-
-})
-$(document).ready(function(){
     var $convArrow = $("#convenient .arrow a");
     var isWeb = true;
     var isTablet = true;
@@ -149,6 +91,72 @@ $(document).ready(function(){
     
 })
 
+$(document).ready(function(){
+    var $boardTab = $("#board .board-post dl dt a");
+    var $boardList = $("#board .board-post dl");
+
+    loadBoardData();
+
+    $boardTab.on("click focus",function(e){
+        e.preventDefault();
+        var target = $(this).attr("href");
+        var isActive = $(this).hasClass("on");
+
+        if(!isActive){
+            $boardTab.removeClass("on");
+            $(this).addClass("on");
+
+            $boardList.children("dd").removeClass("on");
+            $(target).addClass("on");
+        }
+    });
+
+    //게시판 데이터 호출
+    //tab이 추가되어도 코드수정이 없도록 구현
+    function loadBoardData(){
+        var tabCount = $("#board .board-post dl").length;
+        var tabMenu = [];
+
+        for(var i=0; i<tabCount; i++){
+            var menu = $("#board .board-post dl").eq(i).find("a").data("tab");
+            tabMenu.push(menu);
+        }
+
+        $.ajax({
+            url : "data/main/board/data/board.json",
+            dataType : "json",
+            success : function(data){
+                for(var i=0; i<tabCount; i++){
+                    var jsonData = data[tabMenu[i]];
+                    for(var j=0; j<jsonData.length; j++){
+                        $("#board .board-post dl").eq(i).children("dd")
+                        .append(
+                            $("<li>")
+                                .append(
+                                    $("<a>").attr("href","javascript:;").text(jsonData[j].content),
+                                    $("<span>").text(jsonData[j].date)
+                                )
+                        )
+                    }
+                }
+            },
+            error : function(){
+                for(var i=0; i<tabCount; i++){
+                    $("#board .board-post dl").eq(i).children("dd")
+                    .append(
+                        $("<li>")
+                            .append(
+                                $("<a>").attr("href","javascript:;").text("데이터를 불러오지 못했습니다.").css("cursor","text")
+                            )
+                    )
+                }
+            }
+        });
+    }
+})
+$(document).ready(function(){
+    
+})
 $(document).ready(function(){
     
     $("#quick").on("click",function(){
@@ -512,52 +520,6 @@ $(document).ready(function(){
 
 })
 $(document).ready(function(){
-    var $slidesPic = $("#slides .pic");
-    var $listBox = $("#slides .list-box");
-    var $listUl = $("#slides #list");
-    var _slides_svg = {
-        enter_props : {"transition":"stroke-dashoffset 0.7s 0.5s, fill 0.5s 0s"},
-        leave_props : {"transition":"stroke-dashoffset 0.7s 0s, fill 0.5s 0.7s"}
-    };
-    var liWid = $("#slides #list li").outerWidth(true);
-    var liCnt = $("#slides #list li").length;
-    var totalWid = liWid * liCnt;
-    var mLeft = -50;
-
-    //ul크기 li에 맞게 변경
-    $("#slides #list").width(totalWid);
-
-    var sliding = setInterval(move,30);
-
-    $slidesPic.on("mouseenter",function(e){
-        $(this).find("path").css(_slides_svg.enter_props);
-    });
-    
-    $slidesPic.on("mouseleave",function(e){
-        $(this).find("path").css(_slides_svg.leave_props);
-    }); 
-
-    $listBox.on("mouseenter",function(){
-        clearInterval(sliding);
-    });
-
-    $listBox.on("mouseleave",function(){
-        sliding = setInterval(move,20);
-    });
-
-    //이미지 이동
-    function move(){
-        mLeft -= 2;
-        
-        if(mLeft < -liWid){
-            $("#slides #list li").first().appendTo("#slides #list");
-            mLeft = 0;
-        }
-        $listUl.css("left",mLeft);
-    }
-    
-})
-$(document).ready(function(){
     var $visualBtns = $("#visual .visual-btns a");
     var visualSpeed = 600;
     var topLineWid = 83;
@@ -662,6 +624,52 @@ $(document).ready(function(){
         for(var i=0; i<typingTxtArr.length; i++){
             typingTxtArr[i] = typingTxtArr[i].split("");
         }
+    }
+    
+})
+$(document).ready(function(){
+    var $slidesPic = $("#slides .pic");
+    var $listBox = $("#slides .list-box");
+    var $listUl = $("#slides #list");
+    var _slides_svg = {
+        enter_props : {"transition":"stroke-dashoffset 0.7s 0.5s, fill 0.5s 0s"},
+        leave_props : {"transition":"stroke-dashoffset 0.7s 0s, fill 0.5s 0.7s"}
+    };
+    var liWid = $("#slides #list li").outerWidth(true);
+    var liCnt = $("#slides #list li").length;
+    var totalWid = liWid * liCnt;
+    var mLeft = -50;
+
+    //ul크기 li에 맞게 변경
+    $("#slides #list").width(totalWid);
+
+    var sliding = setInterval(move,30);
+
+    $slidesPic.on("mouseenter",function(e){
+        $(this).find("path").css(_slides_svg.enter_props);
+    });
+    
+    $slidesPic.on("mouseleave",function(e){
+        $(this).find("path").css(_slides_svg.leave_props);
+    }); 
+
+    $listBox.on("mouseenter",function(){
+        clearInterval(sliding);
+    });
+
+    $listBox.on("mouseleave",function(){
+        sliding = setInterval(move,20);
+    });
+
+    //이미지 이동
+    function move(){
+        mLeft -= 2;
+        
+        if(mLeft < -liWid){
+            $("#slides #list li").first().appendTo("#slides #list");
+            mLeft = 0;
+        }
+        $listUl.css("left",mLeft);
     }
     
 })
