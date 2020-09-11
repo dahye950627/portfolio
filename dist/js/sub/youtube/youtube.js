@@ -54,8 +54,8 @@ $(document).ready(function(){
             .append(
                 $("<aside class='pop'>")
                     .css({
-                        "width":"90%",
-                        "height":"90%",
+                        "width":"70vw",
+                        "height":"45vw",
                         "position":"fixed",
                         "top":"50%",
                         "left":"50%",
@@ -63,7 +63,7 @@ $(document).ready(function(){
                         "background":"rgba(0,0,0,0.9)",
                         "padding":"60px 50px 50px 50px",
                         "box-sizing":"border-box",
-                        "z-index":"10",
+                        "z-index":"120",
                         "box-shadow":"15px 15px 20px rgba(0,0,0,0.5)",
                         "display":"none"
                     })

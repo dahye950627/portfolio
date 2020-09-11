@@ -1,7 +1,6 @@
 $(document).ready(function(){
     var $visualBtns = $("#visual .visual-btns a");
     var visualSpeed = 600;
-    var topLineWid = 83;
     var isChange = false;
     var isTyping = false;
     var typingIdx = 0;

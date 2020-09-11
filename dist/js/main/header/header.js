@@ -2,14 +2,14 @@ $(document).ready(function(){
     var $util = $("#header .util");
     var $mUtil = $("#header .mGnbWrap .mUtil");
     var $loading = $("#loading");
-    var $gnb = $("#gnb");
+    var $gnb = $("#gnb>ul");
     var $mGnb = $("#mGnb");
     var $mGnbBtn = $(".btn-gnb");
-    var $gnb_li = $("#gnb>li");
-    var $gnb_li_a = $("#gnb li a");
-    var $gnb_li_ul = $("#gnb li ul");
-    var $navi_li = $("#navi>li");
-    var $navi_li_a = $("#navi li a");
+    var $gnb_li = $("#gnb>ul>li");
+    var $gnb_li_a = $("#gnb>ul li a");
+    var $gnb_li_ul = $("#gnb>ul li ul");
+    var $navi_li = $("#navi>ul>li");
+    var $navi_li_a = $("#navi>ul li a");
     var $scroll = $(".myScroll");
 
     var isLoginPopup = true;
@@ -187,10 +187,10 @@ $(document).ready(function(){
 
     //gnb 2depth 열기
     function openSub(){
-        var isGnbBg = $("#gnb .gnb_bg").length;
+        var isGnbBg = $("#gnb>ul .gnb_bg").length;
 
         if(!isGnbBg){
-            $("#gnb").prepend(
+            $("#gnb>ul").prepend(
                 $("<div class='gnb_bg'>").css({
                     "width":"3000px", "height":ht_gnb_max+50,"margin-left":"-1500px" ,"background-color":"#111","position":"absolute","top":ht_gnb_1depth,"left":"0px","display":"none"
                 })
@@ -200,7 +200,7 @@ $(document).ready(function(){
         if(isCloseSub){
             isCloseSub = false;
             $gnb_li_ul.stop().slideDown(gnbSpeed);
-            $("#gnb .gnb_bg").stop().slideDown(gnbSpeed);
+            $("#gnb>ul .gnb_bg").stop().slideDown(gnbSpeed);
         }
     }
 
@@ -208,7 +208,7 @@ $(document).ready(function(){
     function closeSub(){
         if(!isCloseSub){
             $gnb_li_ul.stop().slideUp(gnbSpeed-200);
-            $("#gnb .gnb_bg").stop().slideUp(gnbSpeed-200,function(){
+            $("#gnb>ul .gnb_bg").stop().slideUp(gnbSpeed-200,function(){
                 $(this).remove();
                 isCloseSub = true;
             });
