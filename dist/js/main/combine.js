@@ -1,4 +1,7 @@
 $(document).ready(function(){
+    
+})
+$(document).ready(function(){
     var $boardTab = $("#board .board-post dl dt a");
     var $boardList = $("#board .board-post dl");
 
@@ -63,6 +66,9 @@ $(document).ready(function(){
 })
 $(document).ready(function(){
     
+    $("#quick").on("click",function(){
+        $("html,body").animate({scrollTop:0},500);
+    });
 })
 $(document).ready(function(){
     var $convArrow = $("#convenient .arrow a");
@@ -157,12 +163,6 @@ $(document).ready(function(){
     
 })
 
-$(document).ready(function(){
-    
-    $("#quick").on("click",function(){
-        $("html,body").animate({scrollTop:0},500);
-    });
-})
 $(document).ready(function(){
     var $util = $("#header .util");
     var $mUtil = $("#header .mGnbWrap .mUtil");
