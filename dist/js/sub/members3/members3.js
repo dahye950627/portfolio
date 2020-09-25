@@ -10,6 +10,7 @@ $(document).ready(function(){
             $emailDomain.focus();
         }else {
             var selDomain = $("#members3 #joinForm #email_list option:checked").text();
+            $emailDomain.attr("disabled", true);
             $emailDomain.val(selDomain);
         }
     });
@@ -23,7 +24,6 @@ $(document).ready(function(){
         var isRequiredOk = false;
         var isPwdOk = false;
         var isGenderOk = false;
-        var isColorOk = false;
         var $redData = [];
 
         $("#members3 #joinForm input").removeClass("red");

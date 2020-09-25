@@ -28,8 +28,11 @@ $(document).ready(function(){
     var section5 = $("#board").offset().top;
     var section6 = $("#slides").offset().top;   
 
+
     //레이어팝업 쿠키
     var cookieData = document.cookie;
+    //현재 브라우저의 쿠키를 가져와서 밑의 setCookie 함수에서 
+    //설정해놓은 쿠키가 있는지 확인 후 팝업창을 보여줄지 결정
     if(cookieData.indexOf("today=done") < 0){
         $("#popup").show();
     }else {
@@ -45,6 +48,7 @@ $(document).ready(function(){
         $loading.fadeOut();
     });
 
+
     $(window).on("scroll",function(){
         var scroll = $(this).scrollTop();
     
@@ -58,7 +62,6 @@ $(document).ready(function(){
                 $scroll.eq(0).addClass("on");
             }
         }
-
         //rooms
         if(scroll >= section2-base && scroll < section3-base){
             if(!$navi_li.eq(1).hasClass("on")){
@@ -94,7 +97,6 @@ $(document).ready(function(){
                 }
             }
         }
-
         //board
         if(scroll >= section5-base && scroll < section6-base){
             if(!$navi_li.eq(4).hasClass("on")){
@@ -103,7 +105,7 @@ $(document).ready(function(){
             }
         }
     });
-
+    
 
     //로그인 팝업창 생성
     $util.children().eq(0).children().on("click",function(e){
@@ -120,7 +122,10 @@ $(document).ready(function(){
     //로그인 팝업창 닫기
     $("body").on("click","#loginPopup .close",function(){
         $("#loginPopup").fadeOut(popupSpeed);
-        $("#loginPopup .loginBox").fadeOut(popupSpeed);
+        $("#loginPopup .loginBox").fadeOut(popupSpeed,function(){
+            $("#loginPopup").remove();
+        });
+        
         isLoginPopup = true;
     });
 
@@ -172,6 +177,8 @@ $(document).ready(function(){
 
     //레이어팝업 닫기
     $("#close-popup").on("click",function(){
+        //오늘하루 그만보기가 체크되어있다면 setCookie 함수를
+        //이용하여 쿠키 하루 생성
         if($("#ck").is(":checked")){
             setCookie("today","done",1);
         }
@@ -303,13 +310,16 @@ $(document).ready(function(){
         });
     }
 
-    //레이어팝업 쿠키설정
+     //레이어팝업 쿠키설정
     function setCookie(name, value, expiredays){
+        //현재시간에 쿠키 유지기간인 하루를 추가한뒤  
+        //GMT를 이용한 문자열로 변환한 날짜를 가져옴
         var today = new Date();
         var duedate = today.getDate() + expiredays;
         today.setDate(duedate);
         var result = today.toGMTString();
 
+        //하루를 지정한 result값을 이용하여 쿠키생성
         document.cookie = name + "=" + value + "; path=/; expires=" + result + ";";
     }
 })

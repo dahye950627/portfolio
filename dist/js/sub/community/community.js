@@ -9,7 +9,7 @@ $(document).ready(function(){
         $(this).addClass("on");
     });
 
-    //커뮤니티 데이터 출력
+    //자유게시판 데이터 출력
     function loadData(){
         $.ajax({
             url : "../../data/sub/community/data/list.json",
@@ -17,6 +17,7 @@ $(document).ready(function(){
             success : function(data) {
                 var jsonData = data.list;
                 console.log(data.list);
+                //가져온 데이터를 tbody에 한줄씩 추가
                 for(var i=0; i<jsonData.length; i++){
                     $("#community table tbody")
                         .append(

@@ -27,11 +27,13 @@ $(document).ready(function(){
         var tabCount = $("#board .board-post dl").length;
         var tabMenu = [];
 
+        //tab메뉴를 배열에 push
         for(var i=0; i<tabCount; i++){
             var menu = $("#board .board-post dl").eq(i).find("a").data("tab");
             tabMenu.push(menu);
         }
 
+        //배열에 담아둔 tab명,tab갯수로 json데이터를 가져와 <li>태그 append
         $.ajax({
             url : "data/main/board/data/board.json",
             dataType : "json",
@@ -50,6 +52,7 @@ $(document).ready(function(){
                     }
                 }
             },
+            //데이터로드 에러시 코멘트 append
             error : function(){
                 for(var i=0; i<tabCount; i++){
                     $("#board .board-post dl").eq(i).children("dd")
@@ -63,12 +66,6 @@ $(document).ready(function(){
             }
         });
     }
-})
-$(document).ready(function(){
-    
-    $("#quick").on("click",function(){
-        $("html,body").animate({scrollTop:0},500);
-    });
 })
 $(document).ready(function(){
     var $convArrow = $("#convenient .arrow a");
@@ -143,26 +140,43 @@ $(document).ready(function(){
 
     //이미지 슬라이드 이벤트 바인딩
     function bindingImgEvent(imgWid){
+        //브라우저의 크기별 이미지크기가 다르기 때문에 먼저 이벤트 off
         $("#convenient .prev,#convenient .next").off();
+        //이미지크기 + padding값 10
         $("#convenient .img-box ul").css("margin-left","-" + (imgWid + 10) + "px");
 
+        //next버튼 클릭 시
         $("#convenient .img-box .controls .next").on("click",function(){
+            //이미 왼쪽엔 첫번째이미지가 margin-left로인해 숨겨져있기 때문에
+            //이미지의 2개크기만큼 왼쪽으로 이동시켜야함
             $("#convenient .img-box ul").stop().animate({"margin-left":"-" + imgWid*2 + "px"},500,function(){
+                //이동시킨뒤 맨앞 이미지 즉 li를 떼서 맨뒤에 append
                 $(this).children("li").first().appendTo($(this));
+                //append 동시에 <ul>을 이미지 크기만큼 왼쪽으로 이동
                 $(this).css({"margin-left":"-" + (imgWid+10) + "px"});
             });
         });
     
+        //pre버튼 클릭 시
         $("#convenient .img-box .controls .prev").on("click",function(){
+            //왼쪽에 숨겨져있는 첫번째 이미지를 보이도록 하기위해 margin-left
+            //를 -10px(padding)으로 변경
             $("#convenient .img-box ul").stop().animate({"margin-left":"-10px"},500,function(){
+                //margin-left 변경과 동시에 맨뒤에있는 <li>를 떼서
+                //맨앞으로 append
                 $(this).children("li").last().prependTo($(this));
                 $(this).css({"margin-left":"-" + (imgWid+10) + "px"});
             });
         });
     }
-    
 })
 
+$(document).ready(function(){
+    
+    $("#quick").on("click",function(){
+        $("html,body").animate({scrollTop:0},500);
+    });
+})
 $(document).ready(function(){
     var $util = $("#header .util");
     var $mUtil = $("#header .mGnbWrap .mUtil");
@@ -193,8 +207,11 @@ $(document).ready(function(){
     var section5 = $("#board").offset().top;
     var section6 = $("#slides").offset().top;   
 
+
     //레이어팝업 쿠키
     var cookieData = document.cookie;
+    //현재 브라우저의 쿠키를 가져와서 밑의 setCookie 함수에서 
+    //설정해놓은 쿠키가 있는지 확인 후 팝업창을 보여줄지 결정
     if(cookieData.indexOf("today=done") < 0){
         $("#popup").show();
     }else {
@@ -210,6 +227,7 @@ $(document).ready(function(){
         $loading.fadeOut();
     });
 
+
     $(window).on("scroll",function(){
         var scroll = $(this).scrollTop();
     
@@ -223,7 +241,6 @@ $(document).ready(function(){
                 $scroll.eq(0).addClass("on");
             }
         }
-
         //rooms
         if(scroll >= section2-base && scroll < section3-base){
             if(!$navi_li.eq(1).hasClass("on")){
@@ -259,7 +276,6 @@ $(document).ready(function(){
                 }
             }
         }
-
         //board
         if(scroll >= section5-base && scroll < section6-base){
             if(!$navi_li.eq(4).hasClass("on")){
@@ -268,7 +284,7 @@ $(document).ready(function(){
             }
         }
     });
-
+    
 
     //로그인 팝업창 생성
     $util.children().eq(0).children().on("click",function(e){
@@ -285,7 +301,10 @@ $(document).ready(function(){
     //로그인 팝업창 닫기
     $("body").on("click","#loginPopup .close",function(){
         $("#loginPopup").fadeOut(popupSpeed);
-        $("#loginPopup .loginBox").fadeOut(popupSpeed);
+        $("#loginPopup .loginBox").fadeOut(popupSpeed,function(){
+            $("#loginPopup").remove();
+        });
+        
         isLoginPopup = true;
     });
 
@@ -337,6 +356,8 @@ $(document).ready(function(){
 
     //레이어팝업 닫기
     $("#close-popup").on("click",function(){
+        //오늘하루 그만보기가 체크되어있다면 setCookie 함수를
+        //이용하여 쿠키 하루 생성
         if($("#ck").is(":checked")){
             setCookie("today","done",1);
         }
@@ -468,13 +489,16 @@ $(document).ready(function(){
         });
     }
 
-    //레이어팝업 쿠키설정
+     //레이어팝업 쿠키설정
     function setCookie(name, value, expiredays){
+        //현재시간에 쿠키 유지기간인 하루를 추가한뒤  
+        //GMT를 이용한 문자열로 변환한 날짜를 가져옴
         var today = new Date();
         var duedate = today.getDate() + expiredays;
         today.setDate(duedate);
         var result = today.toGMTString();
 
+        //하루를 지정한 result값을 이용하여 쿠키생성
         document.cookie = name + "=" + value + "; path=/; expires=" + result + ";";
     }
 })
@@ -530,7 +554,7 @@ $(document).ready(function(){
     var liWid = $("#slides #list li").outerWidth(true);
     var liCnt = $("#slides #list li").length;
     var totalWid = liWid * liCnt;
-    var mLeft = -50;
+    var mLeft = 0;
 
     //ul크기 li에 맞게 변경
     $("#slides #list").width(totalWid);
@@ -550,7 +574,7 @@ $(document).ready(function(){
     });
 
     $listBox.on("mouseleave",function(){
-        sliding = setInterval(move,20);
+        sliding = setInterval(move,30);
     });
 
     //이미지 이동

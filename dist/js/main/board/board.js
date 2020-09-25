@@ -24,11 +24,13 @@ $(document).ready(function(){
         var tabCount = $("#board .board-post dl").length;
         var tabMenu = [];
 
+        //tab메뉴를 배열에 push
         for(var i=0; i<tabCount; i++){
             var menu = $("#board .board-post dl").eq(i).find("a").data("tab");
             tabMenu.push(menu);
         }
 
+        //배열에 담아둔 tab명,tab갯수로 json데이터를 가져와 <li>태그 append
         $.ajax({
             url : "data/main/board/data/board.json",
             dataType : "json",
@@ -47,6 +49,7 @@ $(document).ready(function(){
                     }
                 }
             },
+            //데이터로드 에러시 코멘트 append
             error : function(){
                 for(var i=0; i<tabCount; i++){
                     $("#board .board-post dl").eq(i).children("dd")

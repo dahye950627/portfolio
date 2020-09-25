@@ -9,7 +9,7 @@ $(document).ready(function(){
     var liWid = $("#slides #list li").outerWidth(true);
     var liCnt = $("#slides #list li").length;
     var totalWid = liWid * liCnt;
-    var mLeft = -50;
+    var mLeft = 0;
 
     //ul크기 li에 맞게 변경
     $("#slides #list").width(totalWid);
@@ -29,7 +29,7 @@ $(document).ready(function(){
     });
 
     $listBox.on("mouseleave",function(){
-        sliding = setInterval(move,20);
+        sliding = setInterval(move,30);
     });
 
     //이미지 이동
