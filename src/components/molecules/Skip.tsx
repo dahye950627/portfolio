@@ -1,7 +1,7 @@
 const Skip = () => {
-    return (
-        <div>Skip Navi</div>
-    )
+	return (
+		<div>Skip Navi</div>
+	)
 }
 
 export default Skip;
