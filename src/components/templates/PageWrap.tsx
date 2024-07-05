@@ -1,6 +1,17 @@
-const PageWrap = () => {
+import React from 'react';
+import Header from '@/components/organisms/Header';
+
+type pageWrapProps = {
+	page : string;
+	children? : React.ReactNode
+}
+
+const PageWrap: React.FC<pageWrapProps> = (props) => {
 	return (
-		<div></div>
+		<>
+			<Header page={props.page} />
+			{ props.children }
+		</>
 	)
 }
 

@@ -1,7 +1,11 @@
-const About = () => {
+import PageWrap from '@/components/templates/PageWrap';
+
+const AboutPage = () => {
 	return (
-		<div>About</div>
+		<PageWrap page="about">
+			<div>about</div>
+		</PageWrap>
 	)
 }
 
-export default About;
+export default AboutPage;

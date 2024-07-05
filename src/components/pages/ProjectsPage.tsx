@@ -1,6 +1,10 @@
+import PageWrap from '@/components/templates/PageWrap';
+
 const ProjectsPage = () => {
 	return (
-		<div>ProjectsPage</div>
+		<PageWrap page="projects">
+			<div>projects</div>
+		</PageWrap>
 	)
 }
 
