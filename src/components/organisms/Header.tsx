@@ -42,8 +42,8 @@ const Header:React.FC<HeaderProps>  = (props) => {
 const StyledHeader = styled.header`
 	position: fixed;
 	top: 0;
-	bottom: 0;
 	right: 20px;
+	bottom: 0;
 
 	ul {
 		display: flex;
@@ -55,52 +55,49 @@ const StyledHeader = styled.header`
 		li {
 			a {
 				position: relative;
-				display: inline-block;
-				padding: 13px 14px;
-				background: #555;
+				display: flex;
+				align-items: center;
+				padding: 13px;
 				border-radius: 30px;
+				background: #333;
 				transition: all 0.2s;
 
 				span {
 					position: absolute;
 					right: 0;
-					font-size: 16px;
 					font-weight: 500;
-					color: transparent;
 					opacity: 0;
-					transition: opacity 0.3s ease, padding 0.3s ease;
+					color: transparent;
+					line-height: 25px;
+					transition: padding 0.3s, opacity 0.3s;
 				}
-
 				i {
+					display: inline-block;
 					width: 25px;
 					height: 25px;
 					font-size: 20px;
 					text-align: center;
-					line-height: 25px
+					line-height: 25px;
 				}
 			}
 
 			&:hover {
 				a {
-					padding: 13px 14px 13px 25px;
-					background: ${(props) => props.theme.mainColor};
-
+					padding: 13px 13px 13px 22px;
+					background: ${(props) => (props.theme.mainColor)};
 					span {
 						position: relative;
-						right: auto;
 						padding-right: 12px;
 						color: #fff;
 						opacity: 1;
 					}
 				}
-			}
-		
+			}	
 			&.active {
 				a {
-					background-color: ${(props) => props.theme.mainColor}; 
+					background: ${(props) => (props.theme.mainColor)}
 				}
 			}
-
 			& + li {
 				margin-top: 20px;
 			}
