@@ -87,17 +87,13 @@ code {
     monospace;
 }
 
-/* -- */
 #root main{
 	min-height: 100vh;
 }
 
-span.point{
-	color: #ffb400;
+.point{
+	color: #8B03FF;
 }
-
-/*  */
-
 
 
 

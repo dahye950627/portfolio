@@ -44,6 +44,7 @@ const StyledHeader = styled.header`
 	top: 0;
 	right: 20px;
 	bottom: 0;
+	z-index: 100;
 
 	ul {
 		display: flex;
@@ -60,6 +61,7 @@ const StyledHeader = styled.header`
 				padding: 13px;
 				border-radius: 30px;
 				background: #333;
+				box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.5);
 				transition: all 0.2s;
 
 				span {
@@ -99,7 +101,7 @@ const StyledHeader = styled.header`
 				}
 			}
 			& + li {
-				margin-top: 20px;
+				margin-top: 24px;
 			}
 		}
 	}
