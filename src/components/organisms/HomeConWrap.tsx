@@ -24,7 +24,6 @@ const HomeConWrap = () => {
 						<li><span>Name :</span> 이다혜</li>
 						<li><span>Age :</span> 1995.06.27</li>
 						<li><span>Phone :</span> 010-2350-3059</li>
-						<li><span>Address :</span> 경기도 부천시</li>
 						<li><span>Email :</span>  dahye950627@naver.com</li>
 					</ul>
 				</div>
@@ -47,7 +46,7 @@ const StyledHome = styled.main`
 			height: 90vh;
 			border-radius: 32px;
 			background: url(${(props) => props.theme.mainImgSrc}) no-repeat center center / cover;
-			box-shadow: 0px 2px 10px 5px rgba(0,0,0,0.3);
+			box-shadow: 0px 2px 11px 7px rgba(0,0,0,0.3);
 			z-index: 2;
 		}
 		&:before {
@@ -59,6 +58,7 @@ const StyledHome = styled.main`
 			width: calc(50% + 30px);
 			border-radius: 0 30px 30px 0;
 			background: ${(props) => props.theme.mainColor};
+			box-shadow: 0px 2px 10px 4px #c174ff;
 		}
 	}
 	.right {
@@ -82,7 +82,7 @@ const StyledHome = styled.main`
 			}
 		}
 		.info-area {
-			margin-top: 40px;
+			margin-top: 48px;
 
 			h2 {
 				margin-bottom: 12px;
@@ -145,6 +145,7 @@ const StyledHome = styled.main`
 			&:before {
 				width: 10%;
 				border-radius: 0 60px 60px 0;
+				box-shadow: none;
 			}
 			&:after {
 				content: '';

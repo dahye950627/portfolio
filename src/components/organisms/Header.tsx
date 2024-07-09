@@ -61,7 +61,7 @@ const StyledHeader = styled.header`
 				padding: 13px;
 				border-radius: 30px;
 				background: #333;
-				box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.5);
+				box-shadow: 0 0 8px 1px rgba(100,100,100,0.5);
 				transition: all 0.2s;
 
 				span {
@@ -87,6 +87,7 @@ const StyledHeader = styled.header`
 				a {
 					padding: 13px 13px 13px 22px;
 					background: ${(props) => (props.theme.mainColor)};
+					box-shadow: 0 0 8px 1px #c174ff;
 					span {
 						position: relative;
 						padding-right: 12px;
@@ -97,7 +98,8 @@ const StyledHeader = styled.header`
 			}	
 			&.active {
 				a {
-					background: ${(props) => (props.theme.mainColor)}
+					background: ${(props) => (props.theme.mainColor)};
+					box-shadow: 0 0 8px 1px #c174ff;
 				}
 			}
 			& + li {
