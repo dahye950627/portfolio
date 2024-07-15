@@ -1,9 +1,10 @@
 import mainImg from '@/assets/img/img_main.jpg';
 
 const size = {
-	mobile : "720px",
+	laptop : "1280px",
 	tablet : "1024px",
-	laptop : "1280px"
+	mobile : "720px",
+	smallMobile : "480px"
 };
 
 const config = {
@@ -15,9 +16,10 @@ const config = {
 
 	mainImgSrc : mainImg,
 
-	mobile : `(max-width: ${size.mobile})`,
+	laptop : `(max-width: ${size.laptop})`,
 	tablet : `(max-width: ${size.tablet})`,
-	laptop : `(max-width: ${size.laptop})`
+	mobile : `(max-width: ${size.mobile})`,
+	smallMobile : `(max-width: ${size.smallMobile})`
 };
 
 export default config;

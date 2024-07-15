@@ -70,7 +70,7 @@ const StyledHeader = styled.header`
 					font-weight: 500;
 					opacity: 0;
 					color: transparent;
-					line-height: 25px;
+					line-height: 1.2;
 					transition: padding 0.3s, opacity 0.3s;
 				}
 				i {
@@ -105,6 +105,26 @@ const StyledHeader = styled.header`
 			& + li {
 				margin-top: 24px;
 			}
+		}
+	}
+
+	@media ${(props) => props.theme.smallMobile} {
+		ul li {
+			a {
+				padding: 10px;
+
+				i {
+					width: 22px;
+					height: 22px;
+					font-size: 18px;
+					line-height: 22px;
+				}
+			}
+			&:hover {
+				a {
+					padding: 10px 10px 10px 18px;
+				}
+			}	
 		}
 	}
 `;

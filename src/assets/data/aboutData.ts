@@ -2,51 +2,55 @@ const aboutData = {
 	skillList: [
 		{
 			label: "HTML/CSS",
-			grade: "상",
+			rank: "상",
 			detail: ["HTML/CSS예시1","HTML/CSS예시2","HTML/CSS예시3"],
-			icon: "",
+			icon: "fa-brands fa-html5",
+			percent: "",
 		},
 		{
 			label: "jQuery",
-			grade: "중",
+			rank: "중상",
 			detail: ["jQuery예시1","jQuery예시2","jQuery예시3"],
-			icon: "",
+			icon: "fa-brands fa-square-js",
+			percent: "",
 		},
 		{
 			label: "JavaScript",
-			grade: "중하",
+			rank: "중",
 			detail: ["JavaScript예시1","JavaScript예시2","JavaScript예시3"],
-			icon: "",
+			icon: "fa-brands fa-node-js",
+			percent: "",
 		},
 		{
 			label: "Vue",
-			grade: "중",
+			rank: "중하",
 			detail: ["Vue예시1","Vue예시2","Vue예시3"],
-			icon: "",
+			icon: "fa-brands fa-vuejs",
+			percent: "",
 		},
 		{
 			label: "React",
-			grade: "하",
+			rank: "하",
 			detail: ["React예시1"],
-			icon: "",
+			icon: "fa-brands fa-react",
+			percent: "",
 		},
 		{
 			label: "CMS",
-			grade: "중하",
+			rank: "하",
 			detail: ["CMS예시1"],
-			icon: "",
+			icon: "fa-solid fa-laptop-code",
+			percent: "",
 		},
 	],
 	certificateList: [
 		{
 			label: "정보처리기사",
 			issuer: "한국산업인력공단",
-			icon: "",
 		},
 		{
 			label: "컴퓨터활용능력 1급",
 			issuer: "대한상공회의소",
-			icon: "",
 		},
 	],
 	companyList: [
@@ -66,5 +70,28 @@ const aboutData = {
 		},
 	]
 }
+
+aboutData.skillList.forEach(skill => {
+	switch (skill.rank) {
+		case "상":
+			skill.percent = "90%";
+			break;
+		case "중상":
+			skill.percent = "80%";
+			break;
+		case "중":
+			skill.percent = "60%";
+			break;
+		case "중하":
+			skill.percent = "45%";
+			break;
+		case "하":
+			skill.percent = "35%";
+			break;
+		default:
+			skill.percent = "0%";
+			break;
+	}
+})
 
 export default aboutData;
