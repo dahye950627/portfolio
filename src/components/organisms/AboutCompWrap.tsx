@@ -4,11 +4,161 @@ import aboutData from "@/assets/data/aboutData";
 
 const AboutCompWrap = () => {
 	return (
-		<>
-			<div>AboutCompWrap</div>
-		</>
+		<AboutCompStyled>
+			<ul className="comp-list">
+				{
+					aboutData.companyList.map((data, idx) => (
+						<li key={idx}>
+							<div className="icon">
+								<i className="fa-solid fa-building"></i>
+							</div>
+							<span className="period">{ data.period }{' '}({ data.years })</span>
+							<Heading level="4">
+								{ data.label }
+								<span className="job">{ data.job }</span>
+							</Heading>
+							<p>{ data.detail }</p>
+						</li>
+					))
+				}
+			</ul>
+		</AboutCompStyled>
 	)
 }
+
+const AboutCompStyled = styled.div`
+	width: 70%;
+	margin: 0 auto;
+
+	.comp-list {
+		position: relative;
+		padding: 40px;
+		border: 1px solid ${(props) => props.theme.mainColor};
+		border-radius: 10px;
+
+		li {
+			position: relative;
+			padding: 0 0 40px 60px;
+
+			.icon {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 42px;
+				height: 42px;
+				border-radius: 50%;
+				background: ${(props) => props.theme.mainColor};
+				font-size: 18px;
+				text-align: center;
+				line-height: 42px;
+				z-index: 2;
+			}
+			.period {
+				padding: 5px 15px;
+				border-radius: 20px;
+				background: rgb(37, 37, 37);
+				font-size: 14px;
+				font-weight: 500;
+				text-align: center;
+			}
+			h4 {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				padding: 15px 0 8px 0;
+				font-size: 18px;
+				font-weight: 600;
+				color: #fff;
+			}
+			.job {
+				position: relative;
+				padding-left: 30px;
+				font-size: 15px;
+				font-weight: 500;
+
+				&:before {
+					content: '';
+					position: absolute;
+					top: 50%;
+					left: 7px;
+					width: 15px;
+					height: 1px;
+					background: ${(props) => props.theme.mainTxtColor};
+					transform: translateY(-50%);
+				}
+			}
+			p {
+				font-size: 14px;
+				color: #e3e3e3;
+			}
+			
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 21px;
+				width: 1px;
+				height: 100%;
+				background: rgba(51,51,51);
+
+			}
+			&:last-child {
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	@media ${(props) => props.theme.mobile} {
+		width: 100%;
+
+		.comp-list {
+			padding: 20px;
+
+			li {
+				padding: 0 0 30px 46px;
+
+				.icon {
+					width: 36px;
+					height: 36px;
+					font-size: 15px;
+					line-height: 36px;
+				}
+				.period {
+					padding: 5px 10px;
+					font-size: 12px;
+				}
+				h4 {
+					font-size: 16px;
+				}
+				.job {
+					font-size: 13px;
+				}
+				p {
+					font-size: 12px;
+				}
+
+				&:before {
+					left: 18px;
+				}
+			}
+		}
+	}
+	@media ${(props) => props.theme.smallMobile} {
+		.comp-list {
+			li {
+				padding: 0 0 30px 0;
+
+				.icon {
+					display: none;
+				}
+
+				&:before {
+					content: none;
+				}
+			}
+		}
+	}
+`;
 
 
 

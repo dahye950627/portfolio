@@ -57,14 +57,14 @@ const aboutData = {
 		{
 			label: "㈜퓨즈",
 			job: "웹 퍼블리셔",
-			detail: "퓨즈 detail",
+			detail: "퓨즈 detail퓨즈 detail퓨즈 detail퓨즈 detail퓨즈 detail퓨즈 detail",
 			period: "2020.12 ~ 2024.03",
 			years: "3년 3개월"
 		},
 		{
 			label: "㈜모노커뮤니케이션즈",
 			job: "웹 개발자",
-			detail: "모노 detail",
+			detail: "모노 detail모노 detail모노 detail모노 detail모노 detail모노 detail모노 detail",
 			period: "2018.10 ~ 2020.01",
 			years: "1년 4개월"
 		},

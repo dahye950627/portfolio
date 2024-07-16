@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Heading from "@/components/atoms/Heading";
 
@@ -26,6 +27,12 @@ const HomeConWrap = () => {
 						<li><span>Phone :</span> 010-2350-3059</li>
 						<li><span>Email :</span>  dahye950627@naver.com</li>
 					</ul>
+				</div>
+				<div className="btn-area">
+					<Link to="/about">
+						MORE ABOUT ME
+						<i className="fa-solid fa-arrow-right"></i>
+					</Link>
 				</div>
 			</div>
 		</StyledHome>
@@ -82,7 +89,7 @@ const StyledHome = styled.main`
 			}
 		}
 		.info-area {
-			margin-top: 48px;
+			margin: 48px 0;
 
 			h2 {
 				margin-bottom: 12px;
@@ -105,6 +112,42 @@ const StyledHome = styled.main`
 					span {
 						color: #fff;
 						opacity: 0.7;
+					}
+				}
+			}
+		}
+		.btn-area {
+			a {
+				position: relative;
+				display: inline-block;
+				padding: 12px 30px;
+				border-radius: 30px;
+				font-size: 15px;
+				font-weight: 600;
+				color: #fff;
+				background: ${(props) => props.theme.mainColor};
+				transition: all 0.3s;
+
+				i {
+					position: absolute;
+					top: 50%;
+					right: 14px;
+					padding-left: 10px;
+					opacity: 0;
+					transform: translateY(-50%);
+					transition: opacity 0.3s, paddig 0.3s, letter-spacing 0.3s;
+				}
+
+				&:hover {
+					background: ${(props) => props.theme.mainTxtColor};
+					letter-spacing: 1px;
+
+					i {
+						position: relative;
+						top: unset;
+						right: unset;
+						opacity: 1;
+						transform: none;
 					}
 				}
 			}
@@ -159,9 +202,11 @@ const StyledHome = styled.main`
 			}
 		}
 		.right {
-			padding: 36px 71px 71px 32px;
+			padding: 36px 62px 71px 32px;
 
 			.intro-area {
+				
+
 				h1 {
 					font-size: 36px;
 				}
@@ -171,6 +216,9 @@ const StyledHome = styled.main`
 				p {
 					padding: 0;
 				}
+			}
+			.info-area {
+				margin: 48px 0 30px 0;
 			}
 		}
 	}

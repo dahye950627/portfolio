@@ -139,9 +139,6 @@ const AboutSkillStyled = styled.div`
 		}
 	}
 
-	@media ${(props) => props.theme.tablet} {
-	}
-
 	@media ${(props) => props.theme.mobile} {
 		.skill-box {
 			width: 100%;

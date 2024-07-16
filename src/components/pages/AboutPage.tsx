@@ -9,9 +9,8 @@ import AboutCompWrap from '@/components/organisms/AboutCompWrap';
 const AboutPage = () => {
 	return (
 		<PageWrap page="about">
-			<PageHeader text="ABOUT" point="ME" />
-
-			<AboutPageStyled className="inner">
+			<AboutPageStyled>
+				<PageHeader text="ABOUT" point="ME" />
 				<section>
 					<SectionHeaderStyled className="tit-wrap">
 						<Heading level="2">MY SKILLS</Heading>
@@ -37,15 +36,29 @@ const AboutPage = () => {
 	)
 }
 
-const AboutPageStyled = styled.div`
-	max-width: 1140px;
-	margin: 0 auto 80px auto;
-
+const AboutPageStyled = styled.main`
 	section {
-		margin: auto;
-		
-		& + section {
-			margin-top: 100px;
+		position: relative;
+		max-width: 1140px;
+		margin: 0 auto 70px auto;
+		padding-bottom: 70px;
+
+		&:after {
+			content: '';
+			position: absolute;
+			display: block;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			width: 500px;
+			height: 1px;
+			margin: auto;
+			background: rgba(37,37,37);
+		}
+		&:last-child {
+			&:after {
+				content: none;
+			}
 		}
 	}
 
@@ -57,19 +70,31 @@ const AboutPageStyled = styled.div`
 `;
 
 const SectionHeaderStyled = styled.div`
-	padding-bottom: 30px;
+	padding-bottom: 36px;
 	text-align: center;
 
 	h2 {
+		position: relative;
 		font-size: 26px;
 		font-weight: 700;
 		text-transform: uppercase;
 		line-height: 1.2;
 		letter-spacing: 1px;
+
+		&:before {
+			content: '';
+			position: absolute;
+			bottom: -15px;
+			left: 50%;
+			width: 70px;
+			height: 2px;
+			transform: translateX(-50%);
+			background: linear-gradient(to right, #ff69b4, #8B03FF);
+		}
 	}
 
 	@media ${(props) => props.theme.mobile} {
-		padding: 10px 0;
+		padding: 20px 0;
 
 		h2 {
 			font-size: 24px;

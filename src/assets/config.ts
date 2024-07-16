@@ -4,7 +4,8 @@ const size = {
 	laptop : "1280px",
 	tablet : "1024px",
 	mobile : "720px",
-	smallMobile : "480px"
+	smallMobile : "360px",
+	fold : "280px"
 };
 
 const config = {
@@ -19,7 +20,8 @@ const config = {
 	laptop : `(max-width: ${size.laptop})`,
 	tablet : `(max-width: ${size.tablet})`,
 	mobile : `(max-width: ${size.mobile})`,
-	smallMobile : `(max-width: ${size.smallMobile})`
+	smallMobile : `(max-width: ${size.smallMobile})`,
+	fold : `(max-width: ${size.fold})`
 };
 
 export default config;

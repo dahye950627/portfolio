@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import Heading from "@/components/atoms/Heading";
 import aboutData from "@/assets/data/aboutData";
 
 const AboutCertiWrap = () => {
 	return (
-		<AboutCertiWrapStyled>
+		<AboutCertiStyled>
 			{
 				aboutData.certificateList.map((item, idx) => (
 					<div className="certi-box" key={idx}>
@@ -18,25 +17,24 @@ const AboutCertiWrap = () => {
 					</div>
 				))
 			}
-		</AboutCertiWrapStyled>
+		</AboutCertiStyled>
 	)
 }
 
-const AboutCertiWrapStyled = styled.div`
+const AboutCertiStyled = styled.div`
 	display: flex;
-	flex-wrap: wrap;
 	width: 80%;
 	margin: 0 auto;
 
 	.certi-box {
 		width: 50%;
-		padding: 30px 12px 12px;
+		padding: 24px 12px 12px;
 		
 		.inner {
 			position: relative;
 			display: flex;
 			justify-content: space-between;
-			padding: 30px 20px 20px 30px;
+			padding: 20px;
 			border: 1px solid #8B03FF;
 			border-radius: 6px;
 			background: ${(props) => props.theme.mainColor};
@@ -58,7 +56,51 @@ const AboutCertiWrapStyled = styled.div`
 			.tit {
 				font-weight: 600;
 			}
+			.desc {
+				font-size: 14px;
+			}
 		}
+		
+		
+	}
+
+	@media ${(props) => props.theme.laptop} {
+		.certi-box {
+			.inner {
+				flex-direction: column;
+				text-align: center;
+			}
+		}
+	}
+	@media ${(props) => props.theme.mobile} {
+		width: 100%;
+		flex-direction: column;
+		align-items: center;
+
+		.certi-box {
+			width: 100%;
+			
+			.inner {
+				padding: 12px 20px 10px 20px;
+				
+				.icon {
+					top: -20px;
+					left: 14px;
+					width: 42px;
+					height: 42px;
+					font-size: 18px;
+				}
+				.tit {
+					font-size: 14px;
+				}
+				.desc {
+					font-size: 12px;
+				}
+			}
+		}
+	}
+	@media ${(props) => props.theme.smallMobile} {
+		width: 100%;
 	}
 `;
 
