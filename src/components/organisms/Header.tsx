@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -7,8 +7,10 @@ type HeaderProps = {
 }
 
 const Header:React.FC<HeaderProps>  = (props) => {
+	const [isOpen, setIsOpen] = useState<boolean>(true);
+
 	return (
-		<StyledHeader>
+		<StyledHeader className={isOpen ? 'open' : 'close'}>
 			<ul>
 				<li className={props.page === "home" ? "active" : ""}>
 					<Link to="/">
@@ -35,6 +37,11 @@ const Header:React.FC<HeaderProps>  = (props) => {
 					</Link>
 				</li>
 			</ul>
+			<button type="button" className="menu-btn" onClick={() => setIsOpen(!isOpen)}>
+				<span className="blind">메뉴열기</span>
+				<span className="arrow" aria-hidden="true"></span>
+				<span className="arrow" aria-hidden="true"></span>
+			</button>
 		</StyledHeader>
 	)
 }
@@ -105,6 +112,61 @@ const StyledHeader = styled.header`
 			& + li {
 				margin-top: 24px;
 			}
+		}
+	}
+
+	@media ${(props) => props.theme.mobile}{
+		&.close {
+			ul {
+				height: 0;
+				transition: all 0.3s;
+			}
+		}
+
+		padding-bottom: 75px;
+
+		.menu-btn {
+			position: absolute;
+			bottom: 20px;
+			right: 50%;
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			background: transparent;
+			transform: translateX(50%);
+
+			.arrow {
+				position: absolute;
+				top: 8px;
+				display: inline-block;
+
+				&:before,&:after {
+					content: "";
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					width: 2px;
+					height: 14px;
+					border-radius: 1px;
+					background: #707070;
+				}
+				&:before {
+					transform-origin: right bottom;
+					transform: rotate(55deg);
+				}
+				&:after {
+					margin-left: 2px;
+					transform-origin: left bottom;
+					transform: rotate(-55deg);
+				}
+
+				&:last-child {
+					top: 16px;
+				}
+			}
+		}
+		ul {
+			justify-content: flex-end;
 		}
 	}
 
