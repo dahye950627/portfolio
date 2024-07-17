@@ -32,7 +32,7 @@ const PageHeaderStyled = styled.div`
 	}
 
 	@media ${(props) => props.theme.mobile} {
-		padding: 40px 0 30px;
+		padding: 40px 0;
 
 		h1 {
 			font-size: 44px;

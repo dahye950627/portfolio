@@ -32,6 +32,7 @@ const AboutCompStyled = styled.div`
 
 	.comp-list {
 		position: relative;
+		margin-top: 10px;
 		padding: 40px;
 		border: 1px solid ${(props) => props.theme.mainColor};
 		border-radius: 10px;

@@ -67,6 +67,15 @@ const AboutPageStyled = styled.main`
 			width: 85%;
 		}
 	}
+	@media ${(props) => props.theme.mobile} {
+		section {
+			margin: 0 auto 40px auto;
+			padding-bottom: 40px;
+			&:after {
+				width: 80%;
+			}
+		}
+	}
 `;
 
 const SectionHeaderStyled = styled.div`
@@ -94,7 +103,7 @@ const SectionHeaderStyled = styled.div`
 	}
 
 	@media ${(props) => props.theme.mobile} {
-		padding: 20px 0;
+		padding: 0 0 30px;
 
 		h2 {
 			font-size: 24px;
