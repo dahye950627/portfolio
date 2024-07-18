@@ -138,7 +138,7 @@ const StyledHome = styled.main`
 					transition: opacity 0.3s, paddig 0.3s, letter-spacing 0.3s;
 				}
 
-				&:hover {
+				&:hover, &:focus {
 					background: ${(props) => props.theme.mainTxtColor};
 					letter-spacing: 1px;
 
