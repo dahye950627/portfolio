@@ -140,13 +140,14 @@ const StyledHeader = styled.header`
 		height: 40px;
 		background: transparent;
 		transform: translateX(50%);
+		-webkit-tap-highlight-color: transparent;
 
 		.arrow {
 			position: absolute;
 			top: 8px;
 			left: 18px;
 			display: inline-block;
-			animation: ${menuBtnAni} 1s ease-in-out 0s infinite;
+			animation: ${menuBtnAni} 1.2s ease-in-out 0s infinite;
 
 			&:before,&:after {
 				content: "";
@@ -170,7 +171,7 @@ const StyledHeader = styled.header`
 
 			&:last-child {
 				top: 16px;
-				animation: ${menuBtnAni} 1s ease-in-out 0s infinite;
+				animation: ${menuBtnAni} 1.2s ease-in-out 0s infinite;
 			}
 		}
 	}

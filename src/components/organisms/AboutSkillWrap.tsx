@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from "styled-components";
 import aboutData from "@/assets/data/aboutData";
 
@@ -142,6 +141,7 @@ const AboutSkillStyled = styled.div`
 	@media ${(props) => props.theme.mobile} {
 		.skill-box {
 			width: 100%;
+			padding: 12px 0;
 		}
 	}
 

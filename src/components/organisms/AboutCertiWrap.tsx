@@ -43,12 +43,9 @@ const AboutCertiStyled = styled.div`
 				position: absolute;
 				top: -24px;
 				left: 18px;
-				display: flex;
-				justify-content: center;
-				align-items: center;
 				width: 50px;
 				height: 50px;
-				border-radius: 50%;
+				border-radius: 6px;
 				background: ${(props) => props.theme.mainColor};
 				font-size: 24px;
 				text-align: center;
@@ -79,6 +76,7 @@ const AboutCertiStyled = styled.div`
 
 		.certi-box {
 			width: 100%;
+			padding: 24px 0 12px 0;
 			
 			.inner {
 				padding: 12px 20px 10px 20px;

@@ -69,10 +69,12 @@ const AboutPageStyled = styled.main`
 	}
 	@media ${(props) => props.theme.mobile} {
 		section {
-			margin: 0 auto 40px auto;
-			padding-bottom: 40px;
+			width: 100%;
+			padding: 0 24px 44px 24px;
+			margin: 0 0 44px 0;
+
 			&:after {
-				width: 80%;
+				width: 60%;
 			}
 		}
 	}

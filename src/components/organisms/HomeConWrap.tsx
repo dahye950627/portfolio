@@ -1,3 +1,4 @@
+import { useRef, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Heading from "@/components/atoms/Heading";
@@ -11,7 +12,20 @@ const HomeConWrap = () => {
 			<div className="right">
 				<div className="intro-area">
 					<Heading level="2">HELLO EVERYONE! 😁</Heading>
-					<Heading level="1">I'M <strong className="point">WEB PUBLISHER</strong></Heading>
+					<Heading level="1">I'M {' '}
+						<span className="point">W</span>
+						<span className="point">E</span>
+						<span className="point">B</span>{' '}
+						<span className="point">P</span>
+						<span className="point">U</span>
+						<span className="point">B</span>
+						<span className="point">L</span>
+						<span className="point">I</span>
+						<span className="point">S</span>
+						<span className="point">H</span>
+						<span className="point">E</span>
+						<span className="point">R</span>
+					</Heading>
 					<p>
 						안녕하세요 퍼블리셔 이다혜 입니다.<br/>
 						안녕하세요 퍼블리셔 이다혜 입니다.<br/>
@@ -46,26 +60,38 @@ const StyledHome = styled.main`
 	.left {
 		position: relative;
 		flex: 0 0 35%;
-		padding: 5vh 0px 0px 30px;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		padding: 0 0 0 40px;
+
+		&:before, &:after {
+			content: '';
+			position: absolute;
+			left: calc(50% + 20px);
+			transform: translateX(-50%);
+			width: 70%;
+			height: 50px;
+			background: ${(props) => props.theme.mainColor};
+		}
+		&:before {
+			top: 0;
+			border-radius: 0 0 32px 32px;
+		}
+		&:after {
+			bottom: 0;
+			border-radius: 32px 32px 0 0;
+		}
 
 		.img-box {
 			position: relative;
-			height: 90vh;
+			width: 100%;
+			height: 80vh;
 			border-radius: 32px;
+			margin: auto 0;
 			background: url(${(props) => props.theme.mainImgSrc}) no-repeat center center / cover;
 			box-shadow: 0px 2px 11px 7px rgba(0,0,0,0.3);
 			z-index: 2;
-		}
-		&:before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			width: calc(50% + 30px);
-			border-radius: 0 30px 30px 0;
-			background: ${(props) => props.theme.mainColor};
-			box-shadow: 0px 2px 10px 4px #c174ff;
 		}
 	}
 	.right {
@@ -78,7 +104,7 @@ const StyledHome = styled.main`
 		.intro-area {
 			h1 {
 				margin-bottom: 12px;
-				font-size: 44px;
+				font-size: 45px;
 				font-weight: 700;
 			}
 			h2 {
@@ -105,6 +131,7 @@ const StyledHome = styled.main`
 					margin-bottom: 12px;
 					color: ${(props) => props.theme.mainTxtColor};
 					font-size: 16px;
+					font-weight: 600;
 
 					&:last-child {
 						margin: 0;
@@ -185,28 +212,29 @@ const StyledHome = styled.main`
 			.img-box {
 				height: 60vh;
 			}
+			&:before, &:after {
+				height: 100%;
+				transform: none;
+			}
 			&:before {
 				width: 10%;
+				left: 0;
 				border-radius: 0 60px 60px 0;
 				box-shadow: none;
 			}
 			&:after {
 				content: '';
 				position: absolute;
-				top: 0;
+				left: unset;
 				right: 0;
-				bottom: 0;
 				width: 10%;
 				border-radius: 60px 0 0 60px;
-				background: ${(props) => props.theme.mainColor};
 			}
 		}
 		.right {
-			padding: 36px 62px 71px 32px;
+			padding: 36px 24px 71px 24px;
 
 			.intro-area {
-				
-
 				h1 {
 					font-size: 36px;
 				}
@@ -219,6 +247,14 @@ const StyledHome = styled.main`
 			}
 			.info-area {
 				margin: 48px 0 30px 0;
+			}
+		}
+	}
+
+	@media ${(props) => props.theme.smallMobile} {
+		.left {
+			.img-box {
+				height: 50vh;
 			}
 		}
 	}
