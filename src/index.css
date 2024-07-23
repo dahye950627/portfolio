@@ -27,9 +27,9 @@ footer, header, hgroup, menu, nav, section {
 html, body{
 	max-width:1440px;
 	margin:auto;
+	line-height:1.6;
 }
 body {
-	line-height: 1.6;
 	color: #fff;
 }
 ol, ul {
@@ -54,6 +54,9 @@ table {
 	padding: 0px;
 	margin: 0px;    
 	outline: none;
+}
+h1 {
+	font-weight: 700;
 }
 a {
 	margin: 0px;

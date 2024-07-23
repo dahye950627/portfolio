@@ -27,7 +27,7 @@ const AboutCompWrap = () => {
 }
 
 const AboutCompStyled = styled.div`
-	width: 70%;
+	width: 80%;
 	margin: 0 auto;
 
 	.comp-list {

@@ -147,7 +147,7 @@ const StyledHome = styled.main`
 			a {
 				position: relative;
 				display: inline-block;
-				padding: 12px 30px;
+				padding: 14px 30px;
 				border-radius: 30px;
 				font-size: 15px;
 				font-weight: 600;

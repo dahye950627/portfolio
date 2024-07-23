@@ -87,7 +87,6 @@ const StyledHeader = styled.header`
 					padding: 13px;
 					border-radius: 30px;
 					background: #333;
-					box-shadow: 0 0 8px 1px rgba(100,100,100,0.5);
 					transition: all 0.2s;
 	
 					span {
@@ -110,7 +109,6 @@ const StyledHeader = styled.header`
 					&:hover, &:focus {
 						padding: 13px 13px 13px 22px;
 						background: ${(props) => (props.theme.mainColor)};
-						box-shadow: 0 0 8px 1px #c174ff;
 						span {
 							position: relative;
 							padding-right: 12px;
@@ -122,7 +120,6 @@ const StyledHeader = styled.header`
 				&.active {
 					a {
 						background: ${(props) => (props.theme.mainColor)};
-						box-shadow: 0 0 8px 1px #c174ff;
 					}
 				}
 				& + li {
@@ -136,8 +133,8 @@ const StyledHeader = styled.header`
 		bottom: 20px;
 		right: 50%;
 		display: none;
-		width: 40px;
-		height: 40px;
+		width: 44px;
+		height: 44px;
 		background: transparent;
 		transform: translateX(50%);
 		-webkit-tap-highlight-color: transparent;
@@ -145,7 +142,7 @@ const StyledHeader = styled.header`
 		.arrow {
 			position: absolute;
 			top: 8px;
-			left: 18px;
+			left: calc(50% - 2px);
 			display: inline-block;
 			animation: ${menuBtnAni} 1.2s ease-in-out 0s infinite;
 
@@ -183,9 +180,10 @@ const StyledHeader = styled.header`
 			overflow: hidden;
 			
 			ul {
+				position: relative;
 				justify-content: flex-end;
-				transition: all 0.3s;
-	
+				transition: transform 0.3s cubic-bezier(0.190, 1.000, 0.220, 1.000) , opacity 0.2s;
+
 				li {
 					a {
 						&:hover, &:focus {
@@ -210,6 +208,7 @@ const StyledHeader = styled.header`
 		&.close {
 			.nav-wrap {
 				ul {
+					opacity: 0;
 					transform: translateY(300px);
 				}
 			}

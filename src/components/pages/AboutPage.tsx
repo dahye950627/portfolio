@@ -81,7 +81,7 @@ const AboutPageStyled = styled.main`
 `;
 
 const SectionHeaderStyled = styled.div`
-	padding-bottom: 36px;
+	padding-bottom: 50px;
 	text-align: center;
 
 	h2 {
