@@ -27,6 +27,11 @@ const ProjectsWrap = () => {
 									))
 								}
 							</ul>
+							<div className="logo-box">
+								<div className="logo">
+									<img src={require(`@/assets/img/monimo.png`)} alt=""/>
+								</div>
+							</div>
 						</div>
 					</div>
 				))
@@ -45,20 +50,53 @@ const ProjectsWrapStyled = styled.div`
 		padding: 12px;
 
 		.inner {
+			position: relative;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
 			height: 100%;
 			padding: 20px;
-			border: 1px solid rgba(25,25,25);
 			background: rgba(25,25,25);
+			cursor: pointer;
+
+			// 효과 (s)
+			.logo-box {
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(139,3,255,0.7);
+				opacity: 0;
+				transition: all 0.3s;
+				
+				.logo {
+					display: flex;
+					padding: 10px;
+					background-color: rgba(255,255,255);
+					border-radius: 10px;
+
+					img {
+						filter: drop-shadow(2px 4px 5px #fff);
+					}
+				}
+			}
+			&:hover, &:focus {
+				.logo-box {
+					opacity: 1;
+				}
+			}
+			// 효과 (e)
 
 			.info-area {
 				.flag {
 					span {
 						display: inline-block;
 						margin-right: 5px;
-						padding: 1px 6px;
+						padding: 2px 6px;
 						border-radius: 3px;
 						background: #323232;
 						font-size: 11px;
@@ -87,7 +125,10 @@ const ProjectsWrapStyled = styled.div`
 					}
 				}
 				.desc {
-					margin: 16px 0 20px;
+					margin: 16px 0;
+					padding: 10px 0;
+					border: 1px dashed rgba(57,57,57);
+					border-width: 1px 0;
 					font-size: 13px;
 				}
 			}

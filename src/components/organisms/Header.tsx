@@ -32,7 +32,7 @@ const Header:React.FC<HeaderProps>  = (props) => {
 						</Link>
 					</li>
 					<li className={props.page === "github" ? "active" : ""}>
-						<Link to="/github" tabIndex={isOpen ? 0 : -1}>
+						<Link to="https://github.com/LEEDAHYE950627/react-portfolio" tabIndex={isOpen ? 0 : -1} target="_blank">
 							<span>GITHUB</span>
 							<i className="fa-brands fa-github"></i>
 						</Link>

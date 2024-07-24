@@ -46,7 +46,7 @@ const projectsData = {
 		},
 		{
 			Orderer : "신한라이프",
-			name : "신한생명/오렌지라이프IT 통합시스템 구축 용역",
+			name : "신한생명/오렌지라이프IT 통합시스템 구축",
 			web : true,
 			type: "구축",
 			period: "2020.02.15 ~ 2022.01.14",

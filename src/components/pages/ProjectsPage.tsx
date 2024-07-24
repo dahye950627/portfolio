@@ -2,20 +2,14 @@ import styled from "styled-components";
 import PageHeader from '@/components/molecules/PageHeader';
 import PageWrap from '@/components/templates/PageWrap';
 import ProjectsWrap from '@/components/organisms/ProjectsWrap';
-import ProjectsEtcWrap from '@/components/organisms/ProjectsEtcWrap';
 
 const ProjectsPage = () => {
 	return (
 		<PageWrap page="projects">
 			<ProjectsPageStyled>
 				<PageHeader text="MY" point="PROJECTS" />
-
 				<section>
 					<ProjectsWrap/>
-				</section>
-
-				<section>
-					<ProjectsEtcWrap/>
 				</section>
 			</ProjectsPageStyled>
 		</PageWrap>
@@ -38,6 +32,9 @@ const ProjectsPageStyled = styled.main`
 
 			&:after {
 				width: 60%;
+			}
+			&:last-child {
+				padding-bottom: 0;
 			}
 		}
 	}
