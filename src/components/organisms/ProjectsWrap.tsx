@@ -29,7 +29,7 @@ const ProjectsWrap = () => {
 							</ul>
 							<div className="logo-box">
 								<div className="logo">
-									<img src={require(`@/assets/img/monimo.png`)} alt=""/>
+									<img src={require(`@/assets/img/${data.img}.png`)} alt=""/>
 								</div>
 							</div>
 						</div>
@@ -58,6 +58,7 @@ const ProjectsWrapStyled = styled.div`
 			padding: 20px;
 			background: rgba(25,25,25);
 			cursor: pointer;
+			overflow: hidden;
 
 			// 효과 (s)
 			.logo-box {
@@ -71,15 +72,19 @@ const ProjectsWrapStyled = styled.div`
 				height: 100%;
 				background-color: rgba(139,3,255,0.7);
 				opacity: 0;
-				transition: all 0.3s;
+				transition: opacity 0.3s , transform 1.5s;
 				
 				.logo {
 					display: flex;
+					width: 150px;
+					height: 50px;
 					padding: 10px;
 					background-color: rgba(255,255,255);
 					border-radius: 10px;
 
 					img {
+						width: 100%;
+						height: 100%;
 						filter: drop-shadow(2px 4px 5px #fff);
 					}
 				}
@@ -87,6 +92,7 @@ const ProjectsWrapStyled = styled.div`
 			&:hover, &:focus {
 				.logo-box {
 					opacity: 1;
+					transform: scale(1.2);
 				}
 			}
 			// 효과 (e)

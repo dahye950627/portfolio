@@ -105,7 +105,7 @@ const SectionHeaderStyled = styled.div`
 	}
 
 	@media ${(props) => props.theme.mobile} {
-		padding: 0 0 30px;
+		padding: 0 0 40px;
 
 		h2 {
 			font-size: 24px;

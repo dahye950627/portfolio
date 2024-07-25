@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
@@ -8,10 +8,21 @@ type HeaderProps = {
 
 const Header:React.FC<HeaderProps>  = (props) => {
 	const [isOpen, setIsOpen] = useState<boolean>(true);
+	const [isLoad, setIsLoad] = useState<boolean>(false);
+
+	useEffect(() => {
+		setInterval(() => {
+			setIsLoad(true);
+		}, 500);
+		
+		return () => {
+			setIsLoad(false);
+		}
+	}, []);
 
 	return (
 		<StyledHeader className={isOpen ? "open" : "close"}>
-			<div className="nav-wrap">
+			<div className={`nav-wrap ${isLoad ? "on" : ""}`}>
 				<ul>
 					<li className={props.page === "home" ? "active" : ""}>
 						<Link to="/" tabIndex={isOpen ? 0 : -1}>
@@ -69,6 +80,14 @@ const StyledHeader = styled.header`
 
 	.nav-wrap {
 		height: 100%;
+		opacity: 0;
+		transform: translateY(40px);
+		transition: transform 0.6s ease, opacity 0.8s ease;
+
+		&.on {
+			transform: translateY(0);
+			opacity: 1;
+		}
 
 		ul {
 			display: flex;
@@ -88,6 +107,7 @@ const StyledHeader = styled.header`
 					border-radius: 30px;
 					background: #333;
 					transition: all 0.2s;
+					box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.6);
 	
 					span {
 						position: absolute;
@@ -129,14 +149,13 @@ const StyledHeader = styled.header`
 		}
 	}
 	.menu-btn {
-		position: absolute;
+		position: fixed;
 		bottom: 20px;
-		right: 50%;
+		right: 23px;
 		display: none;
 		width: 44px;
 		height: 44px;
 		background: transparent;
-		transform: translateX(50%);
 		-webkit-tap-highlight-color: transparent;
 
 		.arrow {
@@ -195,6 +214,7 @@ const StyledHeader = styled.header`
 								right: 0;
 								opacity: 0;
 								color: transparent;
+								font-size: 0;
 							}
 						}
 					}

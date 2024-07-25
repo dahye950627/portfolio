@@ -44,7 +44,7 @@ const AboutCertiStyled = styled.div`
 				top: -24px;
 				left: 18px;
 				width: 50px;
-				height: 50px;
+				height: 40px;
 				border-radius: 6px;
 				background: ${(props) => props.theme.mainColor};
 				font-size: 24px;
@@ -85,7 +85,7 @@ const AboutCertiStyled = styled.div`
 					top: -20px;
 					left: 14px;
 					width: 42px;
-					height: 42px;
+					height: 30px;
 					font-size: 18px;
 				}
 				.tit {

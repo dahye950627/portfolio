@@ -10,6 +10,7 @@ const projectsData = {
 			desc: "웹 접근성 가이드를 준수하여 기존 삼성생명 WEB, 모바일 WEB 일부 메뉴의 고도화 및 모니모(모바일 APP) 앱 구축을 기존 1, 2차에 이어 3차를 진행하였습니다.",
 			skill: ["Vue", "Html & SCSS","JavaScript"],
 			company: "㈜퓨즈",
+			img: "samsung",
 		},
 		{
 			Orderer : "The-k 한국교직원공제회",
@@ -21,6 +22,7 @@ const projectsData = {
 			desc: "웹 접근성 가이드를 준수하여 한국교직원공제회 홈페이지 전면 개편 및 모바일 APP 개발을 진행하였습니다.",
 			skill: ["Html & CSS","jQuery"],
 			company: "㈜퓨즈",
+			img: "teacher",
 		},
 		{
 			Orderer : "현대해상화재보험",
@@ -32,6 +34,7 @@ const projectsData = {
 			desc: "웹 접근성 가이드를 준수하여 현대해상 HI-S포탈 장기보험 모바일 청약 시스템 신규 모바일 APP 개발을 진행하였습니다.",
 			skill: ["Html & CSS","jQuery"],
 			company: "㈜퓨즈",
+			img: "hyundai",
 		},
 		{
 			Orderer : "SGI서울보증",
@@ -43,6 +46,7 @@ const projectsData = {
 			desc: "웹 접근성 가이드를 준수하여 SGI서울보증 신규 모바일 APP 개발을 진행하였습니다.",
 			skill: ["Vue","HTML & SCSS","JavaScript"],
 			company: "㈜퓨즈",
+			img: "sgi",
 		},
 		{
 			Orderer : "신한라이프",
@@ -54,6 +58,7 @@ const projectsData = {
 			desc: "웹 접근성 가이드를 준수하여 신한생명/오렌지라이프IT 통합시스템인 신한라이프 WEB(반응형), 모바일 WEB, 모바일 APP을 개발하고 일부 메뉴(회사소개, 공시실, 보험상품, 메인배너 등) 컨텐츠를 CMS로 관리하도록 CMS 컴포넌트를 제작하여 화면 개발을 진행하였습니다.",
 			skill: ["Html & CSS","jQuery","CMS"],
 			company: "㈜퓨즈",
+			img: "shinhan",
 		},
 		{
 			Orderer : "웰릭스렌탈",
@@ -65,6 +70,7 @@ const projectsData = {
 			desc: "프로젝트 설명프로젝트 설명프로젝트 설명프로젝트 설명프로젝트 설명",
 			skill: ["Html & CSS","jQuery"],
 			company: "㈜퓨즈",
+			img: "welrix",
 		},
 		{
 			Orderer: "신용회복위원회",
@@ -76,6 +82,7 @@ const projectsData = {
 			desc: "카카오 알림톡, KT 크로샷 메시징 서비스(SMS,LMS)를 연동하여, 신청인의 채무와 신용문제 안내를 템플릿화 하여 해당 메시지 코드와 일치하는 신청인에게 메시지를 발송하는 통합 메시징 시스템 구축하였습니다.",
 			skill: ["Html & CSS","Java","jQuery","DB(oracle)"],
 			company: "㈜모노커뮤니케이션즈",
+			img: "credit",
 		},
 		{
 			Orderer : "경찰청",
@@ -87,6 +94,7 @@ const projectsData = {
 			desc: "카카오 알림톡, KT 크로샷 메시징 서비스(SMS,LMS)를 연동하여, 경찰 임무 수행 중 발생하는 비상 상황에 관한 내용을 전국경찰관서별 관리되는 조직도 기반으로 경찰관에게 전파하는 통합 메시징 시스템 구축하였습니다.",
 			skill: ["Html & CSS","Java","jQuery","DB(oracle)"],
 			company: "㈜모노커뮤니케이션즈",
+			img: "police",
 		},
 		{
 			Orderer : "㈜모노커뮤니케이션즈",
@@ -98,6 +106,7 @@ const projectsData = {
 			desc: "자사 홈페이지 관리자 사이트를 구축하여, 메인 노출 콘텐츠, 부서별 메뉴 콘텐츠, 회사 연혁, 게시판 등 하드코딩으로 작업 되어있는 홈페이지의 데이터를 등록&수정&삭제&노출 여부 등을 관리할 수 있도록 구현하였습니다.",
 			skill: ["Html & CSS","Java","jQuery","DB(oracle)"],
 			company: "㈜모노커뮤니케이션즈",
+			img: "mono",
 		},
 	],
 }

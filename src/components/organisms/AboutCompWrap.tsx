@@ -113,7 +113,8 @@ const AboutCompStyled = styled.div`
 		width: 100%;
 
 		.comp-list {
-			padding: 20px;
+			padding: 0;
+			border: none;
 
 			li {
 				padding: 0 0 30px 46px;
@@ -126,27 +127,18 @@ const AboutCompStyled = styled.div`
 				}
 				.period {
 					padding: 5px 10px;
-					font-size: 12px;
 				}
-				h4 {
-					font-size: 16px;
-				}
-				.job {
-					font-size: 13px;
-				}
-				p {
-					font-size: 12px;
-				}
-
+				
 				&:before {
 					left: 18px;
 				}
 			}
 		}
 	}
-	@media ${(props) => props.theme.smallMobile} {
+	@media ${(props) => props.theme.fold} {
 		.comp-list {
 			li {
+				position: relative;
 				padding: 0 0 30px 0;
 
 				.icon {
@@ -155,6 +147,14 @@ const AboutCompStyled = styled.div`
 
 				&:before {
 					content: none;
+				}
+				& + li:before {
+					content: '';
+					position: absolute;
+					top: -15px;
+					left: 0;
+					width: 100%;
+					height: 1px;
 				}
 			}
 		}

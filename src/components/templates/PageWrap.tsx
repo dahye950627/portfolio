@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '@/components/organisms/Header';
+import PageAni from '@/components/molecules/PageAni';
 
 type pageWrapProps = {
 	page : string;
@@ -11,6 +12,7 @@ const PageWrap: React.FC<pageWrapProps> = (props) => {
 		<>
 			<Header page={props.page} />
 			{ props.children }
+			<PageAni/>
 		</>
 	)
 }
