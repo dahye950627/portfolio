@@ -1,6 +1,5 @@
-import { useRef, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Heading from "@/components/atoms/Heading";
 
 const HomeConWrap = () => {
@@ -53,9 +52,50 @@ const HomeConWrap = () => {
 	)
 }
 
+const leftAni = keyframes`
+	0% {
+		transform: translateY(50px);
+	}
+
+	25% {
+		transform: translateY(-50px);
+	}
+
+	50% {
+		transform: translateY(20px);
+	}
+
+	75% {
+		transform: translateY(-20px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+`;
+const leftMoAni1 = keyframes`
+	0% {
+		left: -60px;
+	}
+
+	100% {
+		left: -
+	}
+`;
+const leftMoAni2 = keyframes`
+	0% {
+		right: -60px; 
+	}
+
+	100% {
+		right: 0;
+	}
+`;
+
 const StyledHome = styled.main`
 	display: flex;
 	width: 100%;
+	overflow: hidden;
 
 	.left {
 		position: relative;
@@ -64,6 +104,7 @@ const StyledHome = styled.main`
 		justify-content: flex-end;
 		align-items: center;
 		padding: 0 0 0 40px;
+		animation: ${leftAni} 0.55s ease-in-out 0.55s 1 normal both;
 
 		&:before, &:after {
 			content: '';
@@ -71,15 +112,15 @@ const StyledHome = styled.main`
 			left: calc(50% + 20px);
 			transform: translateX(-50%);
 			width: 70%;
-			height: 50px;
+			height: 100px;
 			background: ${(props) => props.theme.mainColor};
 		}
 		&:before {
-			top: 0;
+			top: -50px;
 			border-radius: 0 0 32px 32px;
 		}
 		&:after {
-			bottom: 0;
+			bottom: -50px;
 			border-radius: 32px 32px 0 0;
 		}
 
@@ -208,6 +249,7 @@ const StyledHome = styled.main`
 
 		.left {
 			padding: 30px;
+			animation: none;
 
 			.img-box {
 				height: 60vh;
@@ -218,17 +260,21 @@ const StyledHome = styled.main`
 			}
 			&:before {
 				width: 10%;
+				top: 0;
 				left: 0;
 				border-radius: 0 60px 60px 0;
 				box-shadow: none;
+				animation: ${leftMoAni1} 0.35s ease-in-out 0.3s 1 normal both;
 			}
 			&:after {
 				content: '';
 				position: absolute;
 				left: unset;
+				bottom: unset;
 				right: 0;
 				width: 10%;
 				border-radius: 60px 0 0 60px;
+				animation: ${leftMoAni2} 0.35s ease-in-out 0.5s 1 normal both;
 			}
 		}
 		.right {

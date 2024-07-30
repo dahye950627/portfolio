@@ -18,7 +18,6 @@ const ProjectsPage = () => {
 
 const ProjectsPageStyled = styled.main`
 	section {
-		position: relative;
 		max-width: 1140px;
 		margin: 0 auto 70px auto;
 		padding-bottom: 70px;

@@ -15,9 +15,9 @@ const AboutSkillWrap = () => {
 								<span>{ item.label }</span>
 							</div>
 							<div className="right">
-								<span className="graph">
+								<div className="graph">
 									<span className="bar" style={{width: item.percent}}></span>
-								</span>
+								</div>
 								<span>{ item.rank }</span>
 							</div>
 						</div>
@@ -83,6 +83,7 @@ const AboutSkillStyled = styled.div`
 						position: absolute;
 						left: 0;
 						top: 0;
+						display: inline-block;
 						width: 100%;
 						height: 5px;
 						border-radius: 3px;
@@ -97,6 +98,7 @@ const AboutSkillStyled = styled.div`
 							height: 100%;
 							border-radius: 3px 0 0 3px;
 							background: ${(props) => props.theme.mainColor};
+							transition: width 0.3s 0.8s;
 						}
 					}
 				}

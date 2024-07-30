@@ -1,42 +1,100 @@
+import { useState, useEffect } from 'react';
 import styled from "styled-components";
 import projectsData from "@/assets/data/projectsData";
+import ProjectsPopup from "@/components/organisms/ProjectsPopup";
+import { IProjectData } from "@/components/organisms/ProjectsPopup";
 
 const ProjectsWrap = () => {
+	const [isShow, setIsShow] = useState<boolean>(false);
+	const [selectedProject, setSelectedProject] = useState<IProjectData | null>(null);
+	const [previouslyFocusedElement, setPreviouslyFocusedElement] = useState<HTMLElement | null>(null);
+	const [activeButton, setActiveButton] = useState<number | null>(null);
+
+	const projectClickHandler = (idx : number) => {
+		setSelectedProject(projectsData.projectList[idx]);
+		setPreviouslyFocusedElement(document.activeElement as HTMLElement);
+		setIsShow(true);
+	}
+
+	const closePopup = () => {
+		setIsShow(false);
+		setSelectedProject(null);
+	}
+
+	const handleMouseEnter = (idx: number) => {
+		setActiveButton(idx);
+	};
+
+	const handleMouseLeave = () => {
+		setActiveButton(null);
+	};
+
+	const handleFocus = (idx: number) => {
+		setActiveButton(idx);
+	};
+
+	const handleBlur = () => {
+		setActiveButton(null);
+	};
+
+	useEffect(() => {
+		if(isShow) {
+			document.body.style.overflow="hidden";
+		}else {
+			document.body.style.overflow="auto";
+			if (previouslyFocusedElement) previouslyFocusedElement.focus();
+		}
+	}, [isShow, previouslyFocusedElement])
+
 	return (
-		<ProjectsWrapStyled>
+		<>
 			{
-				projectsData.projectList.map((data, idx) => (
-					<div className="project-box" key={idx}>
-						<div className="inner" tabIndex={0} role="button">
-							<div className="info-area">
-								<div className="flag">
-									<span>{ data.Orderer }</span>
-									<span>{ data.type }</span>
+				isShow && (
+					<ProjectsPopup onClose={closePopup} projectData={selectedProject} />
+				)
+			}
+			<ProjectsWrapStyled>
+				{
+					projectsData.projectList.map((data, idx) => (
+						<div className="project-box" key={idx}>
+							<div className="inner" onClick={() => projectClickHandler(idx)}>
+								<div className="info-area">
+									<div className="flag">
+										<span>{ data.orderer }</span>
+										<span>{ data.type }</span>
+										{
+											data.web ? <span className="color">웹접근성마크획득</span> : null
+										}
+									</div>
+									<strong className="tit">{ data.name }</strong>
+									<p className="period">{ data.period } <span>( { data.month } )</span></p>
+									<p className="desc">{ data.desc }</p>
+								</div>
+								<ul className="skill-list">
 									{
-										data.web ? <span className="color">웹접근성마크획득</span> : null
+										data.skill.map((item,idx) => (
+											<li key={idx}>{ item }</li>
+										))
 									}
-								</div>
-								<strong className="tit">{ data.name }</strong>
-								<p className="period">{ data.period } <span>( { data.month } )</span></p>
-								<p className="desc">{ data.desc }</p>
-							</div>
-							<ul className="skill-list">
-								{
-									data.skill.map((item,idx) => (
-										<li key={idx}>{ item }</li>
-									))
-								}
-							</ul>
-							<div className="logo-box">
-								<div className="logo">
-									<img src={require(`@/assets/img/${data.img}.png`)} alt=""/>
-								</div>
+								</ul>
+								<button type="button" 
+									className={`btn-open ${activeButton === idx ? 'on' : ''}`}
+									aria-label={`${data.name} 상세보기`}
+									onMouseEnter={() => handleMouseEnter(idx)}
+									onMouseLeave={handleMouseLeave}
+									onFocus={() => handleFocus(idx)}
+									onBlur={handleBlur}
+								>
+									<div className="ico">
+										<i className="fa-solid fa-arrow-up-right-from-square"></i>
+									</div>
+								</button>
 							</div>
 						</div>
-					</div>
-				))
-			}
-		</ProjectsWrapStyled>
+					))
+				}
+			</ProjectsWrapStyled>
+		</>
 	);
 }
 
@@ -56,46 +114,9 @@ const ProjectsWrapStyled = styled.div`
 			justify-content: space-between;
 			height: 100%;
 			padding: 20px;
+			border: 1px solid rgba(25,25,25);
 			background: rgba(25,25,25);
 			cursor: pointer;
-			overflow: hidden;
-
-			// 효과 (s)
-			.logo-box {
-				position: absolute;
-				top: 0;
-				left: 0;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				width: 100%;
-				height: 100%;
-				background-color: rgba(139,3,255,0.7);
-				opacity: 0;
-				transition: opacity 0.3s , transform 1.5s;
-				
-				.logo {
-					display: flex;
-					width: 150px;
-					height: 50px;
-					padding: 10px;
-					background-color: rgba(255,255,255);
-					border-radius: 10px;
-
-					img {
-						width: 100%;
-						height: 100%;
-						filter: drop-shadow(2px 4px 5px #fff);
-					}
-				}
-			}
-			&:hover, &:focus {
-				.logo-box {
-					opacity: 1;
-					transform: scale(1.2);
-				}
-			}
-			// 효과 (e)
 
 			.info-area {
 				.flag {
@@ -138,7 +159,7 @@ const ProjectsWrapStyled = styled.div`
 					font-size: 13px;
 				}
 			}
-				
+
 			.skill-list {
 				display: flex;
 				flex-wrap: wrap;
@@ -150,6 +171,72 @@ const ProjectsWrapStyled = styled.div`
 					border-radius: 3px;
 					font-size: 14px;
 					line-height: 1.2;
+				}
+			}
+
+			.btn-open {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: transparent;
+	
+				.ico {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					width: 48px;
+					height: 48px;
+					font-size: 32px;
+					color: rgba(255,255,255,0.9);
+					text-align: center;
+					transform: translate(-100%, 0%) scale(0);
+					opacity: 0;
+				}
+				
+				&:before, &:after {
+					content: '';
+					position: absolute;
+					width: 0;
+					height: 0;
+					border: 1px solid transparent;
+					box-sizing: border-box;
+				}
+				&:before {
+					top: 0;
+					left: 0;
+				}
+				&:after {
+					bottom: 0;
+					right: 0;
+				}
+
+				&.on {
+					background: rgb(139, 3, 255, 0.8);
+					transition: all 0.2s ease-out 0.4s;
+	
+					.ico {
+						color: rgba(255,255,255,0.8);
+						transform: translate(-50%,-50%) scale(1);
+						opacity: 1;
+						transition: all 0.2s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s;
+					}
+	
+					&:before {
+						width: 100%;
+						height: 100%;
+						border-top-color: ${(props) => props.theme.mainColor};
+						border-right-color: ${(props) => props.theme.mainColor};
+						transition: width 0.1s ease-out, height 0.1s ease-out 0.1s;
+					}
+					&:after {
+						width: 100%;
+						height: 100%;
+						border-bottom-color: ${(props) => props.theme.mainColor};
+						border-left-color: ${(props) => props.theme.mainColor};
+						transition: width 0.1s ease-out 0.2s, border-bottom-color 0s ease-out 0.2s, height 0.1s ease-out 0.3s, border-left-color 0s ease-out 0.3s;
+					}
 				}
 			}
 		}

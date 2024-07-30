@@ -1,7 +1,22 @@
+/*
+	--- orderer		: 발주처
+	--- name		: 프로젝트 명
+	--- web			: 웹접근정 인증마크 획득 여부
+	--- type		: 유형 (구축, 유지보수, 리뉴얼.. 등)
+	--- period		: 투입 기간
+	--- month 		: 투입 기간(월단위)
+	--- desc		: 설명
+	--- skill		: 퍼블 사용 기술
+	--- company		: 작업했을 때 회사
+	---	img			: 이미지 명
+	--- work		: 작업한 작업 목록
+	--- cooperation	: 퍼블 외의 사용 기술
+*/
+
 const projectsData = {
 	projectList: [
 		{
-			Orderer : "삼성생명",
+			orderer : "삼성생명",
 			name : "삼성생명 금융통합플랫폼 3차 연계 구축 (모니모)",
 			web : true,
 			type: "구축",
@@ -11,9 +26,21 @@ const projectsData = {
 			skill: ["Vue", "Html & SCSS","JavaScript"],
 			company: "㈜퓨즈",
 			img: "samsung",
+			work: [
+				"내가 작업한 업무 예시 1",
+				"내가 작업한 업무 예시 2",
+				"내가 작업한 업무 예시 3",
+				"내가 작업한 업무 예시 4",
+				"내가 작업한 업무 예시 5",
+			],
+			cooperation: [
+				{title : "기획", con : "PowerPoint"},
+				{title : "디자인", con : "PowerPoint"},
+				{title : "형상관리", con : "PowerPoint"},
+			]
 		},
 		{
-			Orderer : "The-k 한국교직원공제회",
+			orderer : "The-k 한국교직원공제회",
 			name : "한국교직원공제회 모바일 APP 구축 및 홈페이지 개편 ISMP",
 			web : true,
 			type: "구축&개편",
@@ -23,9 +50,21 @@ const projectsData = {
 			skill: ["Html & CSS","jQuery"],
 			company: "㈜퓨즈",
 			img: "teacher",
+			work: [
+				"내가 작업한 업무 예시 1",
+				"내가 작업한 업무 예시 2",
+				"내가 작업한 업무 예시 3",
+				"내가 작업한 업무 예시 4",
+				"내가 작업한 업무 예시 5",
+			],
+			cooperation: [
+				{title : "기획", con : "PowerPoint"},
+				{title : "디자인", con : "PowerPoint"},
+				{title : "형상관리", con : "PowerPoint"},
+			]
 		},
 		{
-			Orderer : "현대해상화재보험",
+			orderer : "현대해상화재보험",
 			name : "HI-S 포탈 장기보험 모바일 청약 시스템 구축",
 			web : true,
 			type: "구축",
@@ -35,9 +74,21 @@ const projectsData = {
 			skill: ["Html & CSS","jQuery"],
 			company: "㈜퓨즈",
 			img: "hyundai",
+			work: [
+				"내가 작업한 업무 예시 1",
+				"내가 작업한 업무 예시 2",
+				"내가 작업한 업무 예시 3",
+				"내가 작업한 업무 예시 4",
+				"내가 작업한 업무 예시 5",
+			],
+			cooperation: [
+				{title : "기획", con : "PowerPoint"},
+				{title : "디자인", con : "PowerPoint"},
+				{title : "형상관리", con : "PowerPoint"},
+			]
 		},
 		{
-			Orderer : "SGI서울보증",
+			orderer : "SGI서울보증",
 			name : "SGI서울보증 SGI M 구축",
 			web : true,
 			type: "구축",
@@ -47,9 +98,21 @@ const projectsData = {
 			skill: ["Vue","HTML & SCSS","JavaScript"],
 			company: "㈜퓨즈",
 			img: "sgi",
+			work: [
+				"내가 작업한 업무 예시 1",
+				"내가 작업한 업무 예시 2",
+				"내가 작업한 업무 예시 3",
+				"내가 작업한 업무 예시 4",
+				"내가 작업한 업무 예시 5",
+			],
+			cooperation: [
+				{title : "기획", con : "PowerPoint"},
+				{title : "디자인", con : "PowerPoint"},
+				{title : "형상관리", con : "PowerPoint"},
+			]
 		},
 		{
-			Orderer : "신한라이프",
+			orderer : "신한라이프",
 			name : "신한생명/오렌지라이프IT 통합시스템 구축",
 			web : true,
 			type: "구축",
@@ -59,9 +122,21 @@ const projectsData = {
 			skill: ["Html & CSS","jQuery","CMS"],
 			company: "㈜퓨즈",
 			img: "shinhan",
+			work: [
+				"내가 작업한 업무 예시 1",
+				"내가 작업한 업무 예시 2",
+				"내가 작업한 업무 예시 3",
+				"내가 작업한 업무 예시 4",
+				"내가 작업한 업무 예시 5",
+			],
+			cooperation: [
+				{title : "기획", con : "PowerPoint"},
+				{title : "디자인", con : "PowerPoint"},
+				{title : "형상관리", con : "PowerPoint"},
+			]
 		},
 		{
-			Orderer : "웰릭스렌탈",
+			orderer : "웰릭스렌탈",
 			name : "웰릭스렌탈 APP신규개발/WEB 리뉴얼 용역",
 			web : false,
 			type: "구축&개편",
@@ -71,9 +146,21 @@ const projectsData = {
 			skill: ["Html & CSS","jQuery"],
 			company: "㈜퓨즈",
 			img: "welrix",
+			work: [
+				"내가 작업한 업무 예시 1",
+				"내가 작업한 업무 예시 2",
+				"내가 작업한 업무 예시 3",
+				"내가 작업한 업무 예시 4",
+				"내가 작업한 업무 예시 5",
+			],
+			cooperation: [
+				{title : "기획", con : "PowerPoint"},
+				{title : "디자인", con : "PowerPoint"},
+				{title : "형상관리", con : "PowerPoint"},
+			]
 		},
 		{
-			Orderer: "신용회복위원회",
+			orderer: "신용회복위원회",
 			name : "신용회복위원회 캠페인(문자(SMS/LMS/알림톡) 통합발송 시스템 구축 고도화 ",
 			web : false,
 			type: "구축",
@@ -83,9 +170,21 @@ const projectsData = {
 			skill: ["Html & CSS","Java","jQuery","DB(oracle)"],
 			company: "㈜모노커뮤니케이션즈",
 			img: "credit",
+			work: [
+				"내가 작업한 업무 예시 1",
+				"내가 작업한 업무 예시 2",
+				"내가 작업한 업무 예시 3",
+				"내가 작업한 업무 예시 4",
+				"내가 작업한 업무 예시 5",
+			],
+			cooperation: [
+				{title : "기획", con : "PowerPoint"},
+				{title : "디자인", con : "PowerPoint"},
+				{title : "형상관리", con : "PowerPoint"},
+			]
 		},
 		{
-			Orderer : "경찰청",
+			orderer : "경찰청",
 			name : "경찰청 비상동보시스템 구축",
 			web : false,
 			type: "구축",
@@ -95,9 +194,21 @@ const projectsData = {
 			skill: ["Html & CSS","Java","jQuery","DB(oracle)"],
 			company: "㈜모노커뮤니케이션즈",
 			img: "police",
+			work: [
+				"내가 작업한 업무 예시 1",
+				"내가 작업한 업무 예시 2",
+				"내가 작업한 업무 예시 3",
+				"내가 작업한 업무 예시 4",
+				"내가 작업한 업무 예시 5",
+			],
+			cooperation: [
+				{title : "기획", con : "PowerPoint"},
+				{title : "디자인", con : "PowerPoint"},
+				{title : "형상관리", con : "PowerPoint"},
+			]
 		},
 		{
-			Orderer : "㈜모노커뮤니케이션즈",
+			orderer : "㈜모노커뮤니케이션즈",
 			name : "자사 홈페이지 & 어드민 홈페이지",
 			web : false,
 			type: "구축&개편",
@@ -107,6 +218,18 @@ const projectsData = {
 			skill: ["Html & CSS","Java","jQuery","DB(oracle)"],
 			company: "㈜모노커뮤니케이션즈",
 			img: "mono",
+			work: [
+				"내가 작업한 업무 예시 1",
+				"내가 작업한 업무 예시 2",
+				"내가 작업한 업무 예시 3",
+				"내가 작업한 업무 예시 4",
+				"내가 작업한 업무 예시 5",
+			],
+			cooperation: [
+				{title : "기획", con : "PowerPoint"},
+				{title : "디자인", con : "PowerPoint"},
+				{title : "형상관리", con : "PowerPoint"},
+			]
 		},
 	],
 }

@@ -65,9 +65,8 @@ const PageHeaderStyled = styled.div`
 		font-size: 60px;
 		font-weight: 900;
 		line-height: 1.2;
-		transform: scaleX(0.6);
 		letter-spacing: 1px;
-		animation: ${titleSizeAni} 0.8s ease 0.5s 1 normal both;
+		animation: ${titleSizeAni} 0.65s ease 0.5s 1 normal both;
 
 		span {
 			display: inline-block;
@@ -77,10 +76,10 @@ const PageHeaderStyled = styled.div`
 		}
 		> span:not(.point), .point > span {
 			&:nth-child(odd) {
-				animation: ${titleBomAni} 0.8s ease 0.5s 1 normal both;
+				animation: ${titleBomAni} 0.65s ease 0.5s 1 normal both;
 			}
 			&:nth-child(even) {
-				animation: ${titleTopAni} 0.8s ease 0.5s 1 normal both;
+				animation: ${titleTopAni} 0.65s ease 0.5s 1 normal both;
 			}
 		}
 	}

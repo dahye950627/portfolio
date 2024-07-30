@@ -201,7 +201,7 @@ const StyledHeader = styled.header`
 			ul {
 				position: relative;
 				justify-content: flex-end;
-				transition: transform 0.3s cubic-bezier(0.190, 1.000, 0.220, 1.000) , opacity 0.2s;
+				transition: transform 0.3s ease-in-out , opacity 0.2s;
 
 				li {
 					a {
@@ -233,7 +233,7 @@ const StyledHeader = styled.header`
 				}
 			}
 			.menu-btn {
-				transform: translateX(50%) rotate(180deg);
+				transform: rotate(180deg);
 			}
 		}
 	}
