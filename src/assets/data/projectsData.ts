@@ -27,16 +27,21 @@ const projectsData = {
 			company: "㈜퓨즈",
 			img: "samsung",
 			work: [
-				"내가 작업한 업무 예시 1",
-				"내가 작업한 업무 예시 2",
-				"내가 작업한 업무 예시 3",
-				"내가 작업한 업무 예시 4",
-				"내가 작업한 업무 예시 5",
+				"모니모 디자인에 맞게 공통 스크립트 sticky 버튼영역 여백수치 수정",
+				"삼성생명(WEB) 툴팁 모니모(모바일 APP)에 맞게 컴포넌트 수정",
+				"약관동의 스낵바 및 스크롤 이동 후 메시지 노출 구현 ",
+				"Lottie-Player.js 적용",
+				"퍼블 워크리스트 차수 별 화면 목록 필터링 기능 구현",
+				"스크립트 이슈 결함 처리",
+				"공통 가이드에 기반한 상세 화면 구현",
+				"모니모 작업 내용 가이드 PPT 산출물 작업"
 			],
 			cooperation: [
+				{title : "개발환경", con : "Visual Studio Code, Eclipse"},
+				{title : "형상관리", con : "SVN"},
+				{title : "프로젝트 관리", con : "삼성 PMS"},
 				{title : "기획", con : "PowerPoint"},
-				{title : "디자인", con : "PowerPoint"},
-				{title : "형상관리", con : "PowerPoint"},
+				{title : "디자인", con : "Adobe XD"},
 			]
 		},
 		{

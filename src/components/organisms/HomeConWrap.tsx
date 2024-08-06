@@ -178,6 +178,7 @@ const StyledHome = styled.main`
 						margin: 0;
 					}
 					span {
+						font-weight: 400;
 						color: #fff;
 						opacity: 0.7;
 					}

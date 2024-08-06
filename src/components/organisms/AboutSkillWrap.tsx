@@ -18,7 +18,7 @@ const AboutSkillWrap = () => {
 								<div className="graph">
 									<span className="bar" style={{width: item.percent}}></span>
 								</div>
-								<span>{ item.rank }</span>
+								<span><span className="blind">보유 level</span>{ item.rank }</span>
 							</div>
 						</div>
 						<ul>

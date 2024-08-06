@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styled from "styled-components";
 import projectsData from "@/assets/data/projectsData";
 import ProjectsPopup from "@/components/organisms/ProjectsPopup";
@@ -9,6 +9,7 @@ const ProjectsWrap = () => {
 	const [selectedProject, setSelectedProject] = useState<IProjectData | null>(null);
 	const [previouslyFocusedElement, setPreviouslyFocusedElement] = useState<HTMLElement | null>(null);
 	const [activeButton, setActiveButton] = useState<number | null>(null);
+	const popupRef = useRef();
 
 	const projectClickHandler = (idx : number) => {
 		setSelectedProject(projectsData.projectList[idx]);
@@ -20,22 +21,6 @@ const ProjectsWrap = () => {
 		setIsShow(false);
 		setSelectedProject(null);
 	}
-
-	const handleMouseEnter = (idx: number) => {
-		setActiveButton(idx);
-	};
-
-	const handleMouseLeave = () => {
-		setActiveButton(null);
-	};
-
-	const handleFocus = (idx: number) => {
-		setActiveButton(idx);
-	};
-
-	const handleBlur = () => {
-		setActiveButton(null);
-	};
 
 	useEffect(() => {
 		if(isShow) {
@@ -67,7 +52,7 @@ const ProjectsWrap = () => {
 										}
 									</div>
 									<strong className="tit">{ data.name }</strong>
-									<p className="period">{ data.period } <span>( { data.month } )</span></p>
+									<p className="period"><i className="fa-solid fa-calendar-days"></i> { data.period } <span>( { data.month } )</span></p>
 									<p className="desc">{ data.desc }</p>
 								</div>
 								<ul className="skill-list">
@@ -80,10 +65,10 @@ const ProjectsWrap = () => {
 								<button type="button" 
 									className={`btn-open ${activeButton === idx ? 'on' : ''}`}
 									aria-label={`${data.name} 상세보기`}
-									onMouseEnter={() => handleMouseEnter(idx)}
-									onMouseLeave={handleMouseLeave}
-									onFocus={() => handleFocus(idx)}
-									onBlur={handleBlur}
+									onMouseEnter={() => setActiveButton(idx)}
+									onMouseLeave={() => setActiveButton(null)}
+									onFocus={() => setActiveButton(idx)}
+									onBlur={() => setActiveButton(null)}
 								>
 									<div className="ico">
 										<i className="fa-solid fa-arrow-up-right-from-square"></i>
@@ -134,7 +119,6 @@ const ProjectsWrapStyled = styled.div`
 				}
 				.tit {
 					display: block;
-					flex: 0 0 75%;
 					margin: 6px 0 8px 0;
 					font-size: 16px;
 					font-weight: 700;
@@ -149,6 +133,10 @@ const ProjectsWrapStyled = styled.div`
 					span {
 						font-size: 12px;
 						vertical-align: text-bottom;
+					}
+					i {
+						font-size: 14px;
+						color: rgba(255,255,255,0.9);
 					}
 				}
 				.desc {
