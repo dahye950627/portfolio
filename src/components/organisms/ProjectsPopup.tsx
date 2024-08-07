@@ -50,7 +50,6 @@ type ProjectsPopupProps = {
 						</div>
 						<Heading level="2" className="tit">{ projectData.name }</Heading>
 						<p className="period"><i className="fa-solid fa-calendar-days"></i>{ projectData.period } <span>( { projectData.month } )</span></p>
-						
 					</div>
 					
 					<div className="line-box">
@@ -84,7 +83,7 @@ type ProjectsPopupProps = {
 						<ul className="coop-list">
 							{
 								projectData.cooperation.map((data, idx) => (
-									<li key={idx}><span className="line">{ data.title }</span> : <span>{ data.con }</span></li>
+									<li key={idx}><span className="line">{ data.title }</span><span>{ data.con }</span></li>
 								))
 							}
 						</ul>
@@ -106,7 +105,7 @@ const ProjectsPopupStyled = styled.div`
 	align-items: center;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0,0,0,0.6);
+	background-color: rgba(0,0,0,0.7);
 	z-index: 200;
 
 	.pop-con {
@@ -125,11 +124,11 @@ const ProjectsPopupStyled = styled.div`
 			overflow-x: hidden;
 
 			&::-webkit-scrollbar {
-				width: 8px; 
+				width: 6px; 
 			}
 			&::-webkit-scrollbar-track {
 				background: rgba(57,57,57); 
-				border-radius: 0; 
+				border-radius: 10px; 
 			}
 			&::-webkit-scrollbar-thumb {
 				background: ${(props) => props.theme.mainColor}; 
@@ -137,6 +136,7 @@ const ProjectsPopupStyled = styled.div`
 			}
 
 			.img {
+				margin-bottom: 24px;
 				img {
 					width: 100%;
 				}
@@ -147,11 +147,11 @@ const ProjectsPopupStyled = styled.div`
 				.flag {
 					span {
 						display: inline-block;
-						margin-right: 8px;
+						margin: 0 8px 5px 0;
 						padding: 2px 8px;
 						border-radius: 3px;
 						background: #323232;
-						font-size: 13px;
+						font-size: 14px;
 					}
 					.color {
 						background: ${(props) => props.theme.mainColor};
@@ -159,26 +159,23 @@ const ProjectsPopupStyled = styled.div`
 				}
 				.tit {
 					display: block;
-					margin: 8px 0;
-					font-size: 20px;
+					margin: 10px 0;
+					font-size: 22px;
 					font-weight: 700;
 					color: #fff;
 					word-break: keep-all;
 				}
 				.period {
 					display: block;
-					font-size: 16px;
+					font-weight: 600;
 					word-break: keep-all;
 
 					span {
-						font-size: 13px;
-						vertical-align: text-bottom;
+						font-size: 14px;
 					}
 					i {
 						padding-right: 8px;
-						font-size: 15px;
 						color: ${(props) => props.theme.mainTxtColor};
-						opacity: 0.7;
 					}
 				}
 			}
@@ -186,6 +183,7 @@ const ProjectsPopupStyled = styled.div`
 				padding: 24px 0;
 				border: 1px dashed rgba(57,57,57);
 				border-width: 1px 0;
+				font-size: 15px;
 
 				& + .line-box {
 					border-top-width: 0;
@@ -193,7 +191,7 @@ const ProjectsPopupStyled = styled.div`
 				.sub-tit {
 					display: block;
 					margin-bottom: 12px;
-					font-size: 14px;
+					font-size: 15px;
 					font-weight: 600;
 					color: ${(props) => props.theme.mainTxtColor};
 					line-height: 1.2;
@@ -210,19 +208,15 @@ const ProjectsPopupStyled = styled.div`
 					}
 				}
 			}
-			.desc {
-				font-size: 14px;
-			}
 			.skill-list {
 				display: flex;
 				flex-wrap: wrap;
 
 				li {
-					margin: 0 6px 6px 0;
-					padding: 2px 5px;
+					margin: 0 6px 0 0;
+					padding: 3px 8px;
 					border: 1px solid #fff;
 					border-radius: 3px;
-					font-size: 14px;
 					line-height: 1.2;
 				}
 			}
@@ -250,22 +244,42 @@ const ProjectsPopupStyled = styled.div`
 				font-size: 14px;
 
 				li {
+					position: relative;
+					display: flex;
+					padding-left: 16px;
+					font-weight: 600;
+
+					&:before {
+						content: '';
+						position: absolute;
+						top: 8px;
+						left: 3px;
+						width: 4px;
+						height: 4px;
+						border-radius: 50%;
+						background: ${(props) => props.theme.mainTxtColor};
+					}
 					.line {
 						position: relative;
+						display: inline-block;
+						min-width: 130px;
+						font-weight: 400;
+						color: #dcdcdc;
 
-						&:before {
+						&:after {
 							content: '';
 							position: absolute;
-							bottom: 0;
-							left: 0;
-							width: 100%;
-							height: 2px;
-							background: linear-gradient(to right, #ff69b4, #8B03FF);
-							opacity: 0.7;
+							right: 20px;
+							top: 7px;
+							width: 7px;
+							height: 7px;
+							border-top: 1px solid ${(props) => props.theme.mainTxtColor};
+							border-right: 1px solid ${(props) => props.theme.mainTxtColor};
+							transform: rotate(45deg);
 						}
 					}
 					& + li {
-						margin-top: 8px;
+						margin-top: 14px;
 					}
 				}
 			}
@@ -303,8 +317,32 @@ const ProjectsPopupStyled = styled.div`
 		}
 	}
 
-	@media ${(props) => props.theme.mobild} {
-	
+	@media ${(props) => props.theme.laptop} {
+		.pop-con {
+			width: 65%;
+		}
+	}
+
+	@media ${(props) => props.theme.mobile} {
+		.pop-con {
+			width: 100%;
+			height: 100vh;
+			border: none;
+
+			&:before {
+				content: '';
+				position: fixed;
+				top: 45px;
+				left: 0;
+				right: 0;
+				height: 16px;
+				background: #000;
+				filter: blur(9px);
+			}
+		}
+	}
+	@media ${(props) => props.theme.smallMobile} {
+
 	}
 `;
 
