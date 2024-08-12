@@ -82,23 +82,21 @@ const AboutCertiStyled = styled.div`
 				padding: 12px 20px 10px 20px;
 				
 				.icon {
-					top: -20px;
+					top: -22px;
 					left: 14px;
-					width: 42px;
-					height: 30px;
+					width: 38px;
+					height: 32px;
 					font-size: 18px;
+					line-height: 32px;
 				}
 				.tit {
-					font-size: 14px;
+					font-size: 16px;
 				}
 				.desc {
-					font-size: 12px;
+					font-size: 14px;
 				}
 			}
 		}
-	}
-	@media ${(props) => props.theme.smallMobile} {
-		width: 100%;
 	}
 `;
 

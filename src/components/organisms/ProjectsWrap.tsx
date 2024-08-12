@@ -9,7 +9,6 @@ const ProjectsWrap = () => {
 	const [selectedProject, setSelectedProject] = useState<IProjectData | null>(null);
 	const [previouslyFocusedElement, setPreviouslyFocusedElement] = useState<HTMLElement | null>(null);
 	const [activeButton, setActiveButton] = useState<number | null>(null);
-	const popupRef = useRef();
 
 	const projectClickHandler = (idx : number) => {
 		setSelectedProject(projectsData.projectList[idx]);
@@ -70,9 +69,6 @@ const ProjectsWrap = () => {
 									onFocus={() => setActiveButton(idx)}
 									onBlur={() => setActiveButton(null)}
 								>
-									<div className="ico">
-										<i className="fa-solid fa-arrow-up-right-from-square"></i>
-									</div>
 								</button>
 							</div>
 						</div>
@@ -135,15 +131,16 @@ const ProjectsWrapStyled = styled.div`
 						vertical-align: text-bottom;
 					}
 					i {
+						padding-right: 3px;
 						font-size: 14px;
 						color: rgba(255,255,255,0.9);
 					}
 				}
 				.desc {
-					margin: 16px 0;
-					padding: 10px 0;
+					margin: 16px 0 0;
+					padding: 12px 0 0;
 					border: 1px dashed rgba(57,57,57);
-					border-width: 1px 0;
+					border-width: 1px 0 0;
 					font-size: 13px;
 				}
 			}
@@ -151,6 +148,10 @@ const ProjectsWrapStyled = styled.div`
 			.skill-list {
 				display: flex;
 				flex-wrap: wrap;
+				margin-top: 16px;
+				padding-top: 12px;
+				border: 1px dashed rgba(57,57,57);
+				border-width: 1px 0 0;
 
 				li {
 					margin: 0 6px 6px 0;
@@ -169,6 +170,7 @@ const ProjectsWrapStyled = styled.div`
 				width: 100%;
 				height: 100%;
 				background: transparent;
+				-webkit-tap-highlight-color: transparent !important;
 	
 				.ico {
 					position: absolute;
@@ -190,6 +192,7 @@ const ProjectsWrapStyled = styled.div`
 					height: 0;
 					border: 1px solid transparent;
 					box-sizing: border-box;
+					-webkit-tap-highlight-color: transparent !important;
 				}
 				&:before {
 					top: 0;
@@ -201,15 +204,7 @@ const ProjectsWrapStyled = styled.div`
 				}
 
 				&.on {
-					background: rgb(139, 3, 255, 0.8);
 					transition: all 0.2s ease-out 0.4s;
-	
-					.ico {
-						color: rgba(255,255,255,0.8);
-						transform: translate(-50%,-50%) scale(1);
-						opacity: 1;
-						transition: all 0.2s cubic-bezier(0.165, 0.840, 0.440, 1.000) 0.5s;
-					}
 	
 					&:before {
 						width: 100%;

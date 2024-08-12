@@ -196,11 +196,16 @@ const StyledHeader = styled.header`
 		padding-bottom: 70px;
 
 		.nav-wrap {
+			position: fixed;
+			bottom: 64px;
+			right: 9px;
 			overflow: hidden;
+			height: auto;
 			
 			ul {
 				position: relative;
 				justify-content: flex-end;
+				height: auto;
 				transition: transform 0.3s ease-in-out , opacity 0.2s;
 
 				li {

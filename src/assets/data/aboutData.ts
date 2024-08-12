@@ -3,42 +3,36 @@ const aboutData = {
 		{
 			label: "HTML/CSS",
 			rank: "상",
-			detail: ["HTML/CSS예시1","HTML/CSS예시2","HTML/CSS예시3"],
 			icon: "fa-brands fa-html5",
 			percent: "",
 		},
 		{
 			label: "jQuery",
 			rank: "중상",
-			detail: ["jQuery예시1","jQuery예시2","jQuery예시3"],
 			icon: "fa-brands fa-square-js",
 			percent: "",
 		},
 		{
 			label: "JavaScript",
 			rank: "중",
-			detail: ["JavaScript예시1","JavaScript예시2","JavaScript예시3"],
 			icon: "fa-brands fa-node-js",
 			percent: "",
 		},
 		{
 			label: "Vue",
 			rank: "중하",
-			detail: ["Vue예시1","Vue예시2","Vue예시3"],
 			icon: "fa-brands fa-vuejs",
 			percent: "",
 		},
 		{
 			label: "React",
 			rank: "하",
-			detail: ["React예시1"],
 			icon: "fa-brands fa-react",
 			percent: "",
 		},
 		{
 			label: "CMS",
 			rank: "하",
-			detail: ["CMS예시1"],
 			icon: "fa-solid fa-laptop-code",
 			percent: "",
 		},
@@ -57,14 +51,14 @@ const aboutData = {
 		{
 			label: "㈜퓨즈",
 			job: "웹 퍼블리셔",
-			detail: "퓨즈 detail퓨즈 detail퓨즈 detail퓨즈 detail퓨즈 detail퓨즈 detail",
+			detail: "웹 에이전시 퓨즈에서 웹 퍼블리싱을 담당하였습니다. 삼성모니모, SGI 서울보증, 신한라이프 등 웹 접근성 인증마크를 획득한 다양한 보험권 구축 프로젝트를 경험하였고, 제안 작업을 진행하며 다양한 인터렉션 제작 능력을 키웠습니다.",
 			period: "2020.12 ~ 2024.03",
 			years: "3년 3개월"
 		},
 		{
 			label: "㈜모노커뮤니케이션즈",
 			job: "웹 개발자",
-			detail: "모노 detail모노 detail모노 detail모노 detail모노 detail모노 detail모노 detail",
+			detail: "메시징 시스템 솔루션 회사인 모노커뮤니케이션즈에서 웹 개발을 담당하였습니다. KT 크로샷 메시징 시스템, 카카오톡 알림톡을 연동하여 개발된 통합 메시징 시스템을 구축하고, 리눅스 환경에 설치된 솔루션의 정기점검을 진행하였습니다.",
 			period: "2018.10 ~ 2020.01",
 			years: "1년 4개월"
 		},

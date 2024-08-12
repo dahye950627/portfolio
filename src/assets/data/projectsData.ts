@@ -56,16 +56,20 @@ const projectsData = {
 			company: "㈜퓨즈",
 			img: "teacher",
 			work: [
-				"내가 작업한 업무 예시 1",
-				"내가 작업한 업무 예시 2",
-				"내가 작업한 업무 예시 3",
-				"내가 작업한 업무 예시 4",
-				"내가 작업한 업무 예시 5",
+				"The-K 마음쉼 메뉴 구현",
+				"금융 상품 별 상세 화면 구현",
+				"사이트맵 구현",
+				"GNB 구현",
+				"Sortable.js 이용한 나만의 메뉴 설정 화면 구현",
+				"공통 가이드에 기반한 상세 화면 구현",
+				"메인 로그인 영역 구현",
 			],
 			cooperation: [
+				{title : "개발환경", con : "Eclipse"},
+				{title : "형상관리", con : "SVN"},
+				{title : "프로젝트 관리", con : "LG CNS Orchestra"},
 				{title : "기획", con : "PowerPoint"},
-				{title : "디자인", con : "PowerPoint"},
-				{title : "형상관리", con : "PowerPoint"},
+				{title : "디자인", con : "Zeplin"},
 			]
 		},
 		{
@@ -80,16 +84,15 @@ const projectsData = {
 			company: "㈜퓨즈",
 			img: "hyundai",
 			work: [
-				"내가 작업한 업무 예시 1",
-				"내가 작업한 업무 예시 2",
-				"내가 작업한 업무 예시 3",
-				"내가 작업한 업무 예시 4",
-				"내가 작업한 업무 예시 5",
+				"관리자 사이트 구현",
+				"계약 상세 화면 구현",
+				"공통 가이드에 기반한 메뉴별 상세 화면 구현",
 			],
 			cooperation: [
+				{title : "개발환경", con : "Eclipse"},
+				{title : "형상관리", con : "SVN"},
 				{title : "기획", con : "PowerPoint"},
-				{title : "디자인", con : "PowerPoint"},
-				{title : "형상관리", con : "PowerPoint"},
+				{title : "디자인", con : "Adobe Photoshop"},
 			]
 		},
 		{
@@ -104,16 +107,18 @@ const projectsData = {
 			company: "㈜퓨즈",
 			img: "sgi",
 			work: [
-				"내가 작업한 업무 예시 1",
-				"내가 작업한 업무 예시 2",
-				"내가 작업한 업무 예시 3",
-				"내가 작업한 업무 예시 4",
-				"내가 작업한 업무 예시 5",
+				"메인 화면 구현",
+				"영업점 안내 컴포넌트 개발",
+				"이용 안내 컴포넌트 개발",
+				"고객의 소리 메뉴 화면 구현",
+				"안내사항 메뉴 화면 구현",
+				"공통 가이드에 기반한 메뉴별 상세 화면 구현",
 			],
 			cooperation: [
+				{title : "개발환경", con : "Visual Studio Code"},
+				{title : "형상관리", con : "SVN"},
 				{title : "기획", con : "PowerPoint"},
-				{title : "디자인", con : "PowerPoint"},
-				{title : "형상관리", con : "PowerPoint"},
+				{title : "디자인", con : "Zeplin"},
 			]
 		},
 		{
@@ -128,16 +133,16 @@ const projectsData = {
 			company: "㈜퓨즈",
 			img: "shinhan",
 			work: [
-				"내가 작업한 업무 예시 1",
-				"내가 작업한 업무 예시 2",
-				"내가 작업한 업무 예시 3",
-				"내가 작업한 업무 예시 4",
-				"내가 작업한 업무 예시 5",
+				"혜택/서비스 메뉴 화면 구현",
+				"신비운(운세) 화면 구현",
+				"CMS 공통 컴포넌트에 기반한 메뉴별 상세 화면 구현",
+				"공통 가이드에 기반한 메뉴별 상세 화면 구현",
 			],
 			cooperation: [
+				{title : "개발환경", con : "Eclipse"},
+				{title : "형상관리", con : "SVN"},
 				{title : "기획", con : "PowerPoint"},
-				{title : "디자인", con : "PowerPoint"},
-				{title : "형상관리", con : "PowerPoint"},
+				{title : "디자인", con : "Adobe Photoshop"},
 			]
 		},
 		{
@@ -176,16 +181,12 @@ const projectsData = {
 			company: "㈜모노커뮤니케이션즈",
 			img: "credit",
 			work: [
-				"내가 작업한 업무 예시 1",
-				"내가 작업한 업무 예시 2",
-				"내가 작업한 업무 예시 3",
-				"내가 작업한 업무 예시 4",
-				"내가 작업한 업무 예시 5",
+				"jqGrid.js 이용하여 DB 연동 및 메시지 전송 후 성공여부, 전송시간, 도착시간 등 결과값 도출 기능 개발",
+				"dynaTree.js 이용하여 DB 연동 및 메시지 전송대상 조직도 CRUD 개발",
+				"코드 별 메시지 내용 매칭 기능 개발",
 			],
 			cooperation: [
-				{title : "기획", con : "PowerPoint"},
-				{title : "디자인", con : "PowerPoint"},
-				{title : "형상관리", con : "PowerPoint"},
+				{title : "개발환경", con : "Eclipse"},
 			]
 		},
 		{
@@ -200,16 +201,11 @@ const projectsData = {
 			company: "㈜모노커뮤니케이션즈",
 			img: "police",
 			work: [
-				"내가 작업한 업무 예시 1",
-				"내가 작업한 업무 예시 2",
-				"내가 작업한 업무 예시 3",
-				"내가 작업한 업무 예시 4",
-				"내가 작업한 업무 예시 5",
+				"jqGrid.js 이용하여 DB 연동 및 메시지 전송 후 성공여부, 전송시간, 도착시간 등 결과값 도출 기능 개발",
+				"dynaTree.js 이용하여 DB 연동 및 메시지 전송대상 조직도 CRUD 개발 메인 화면 구현",
 			],
 			cooperation: [
-				{title : "기획", con : "PowerPoint"},
-				{title : "디자인", con : "PowerPoint"},
-				{title : "형상관리", con : "PowerPoint"},
+				{title : "개발환경", con : "Eclipse"},
 			]
 		},
 		{
@@ -224,16 +220,13 @@ const projectsData = {
 			company: "㈜모노커뮤니케이션즈",
 			img: "mono",
 			work: [
-				"내가 작업한 업무 예시 1",
-				"내가 작업한 업무 예시 2",
-				"내가 작업한 업무 예시 3",
-				"내가 작업한 업무 예시 4",
-				"내가 작업한 업무 예시 5",
+				"메인 / 비주얼 영역 및 각 부서별 아이콘&텍스트 노출 CRUD 개발",
+				"공지사항 / 게시글 CRUD 및 최상단 고정노출 기능 개발",
+				"부서메뉴 / 솔루션사업부, 크로샷사업부 컨텐츠 CRUD 개발",
+				"각 부서에 관리자 홈페이지 사용 가이드 배포 및 안내",
 			],
 			cooperation: [
-				{title : "기획", con : "PowerPoint"},
-				{title : "디자인", con : "PowerPoint"},
-				{title : "형상관리", con : "PowerPoint"},
+				{title : "개발환경", con : "Eclipse"},
 			]
 		},
 	],

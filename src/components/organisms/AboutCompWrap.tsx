@@ -89,7 +89,7 @@ const AboutCompStyled = styled.div`
 				}
 			}
 			p {
-				font-size: 14px;
+				font-size: 15px;
 				color: #e3e3e3;
 			}
 			
@@ -126,7 +126,11 @@ const AboutCompStyled = styled.div`
 					line-height: 36px;
 				}
 				.period {
-					padding: 5px 10px;
+					padding: 5px 12px;
+					font-size: 13px;
+				}
+				p {
+					font-size: 14px;
 				}
 				
 				&:before {
@@ -135,7 +139,7 @@ const AboutCompStyled = styled.div`
 			}
 		}
 	}
-	@media ${(props) => props.theme.fold} {
+	@media ${(props) => props.theme.smallMobile} {
 		.comp-list {
 			li {
 				position: relative;

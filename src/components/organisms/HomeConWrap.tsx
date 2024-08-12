@@ -1,20 +1,46 @@
+import  { useEffect, useRef } from 'react';
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import Heading from "@/components/atoms/Heading";
+import gsap from 'gsap';
 
 const HomeConWrap = () => {
+	const pointsRef = useRef<HTMLDivElement | null>(null);
+
+	useEffect(() => {
+		if (pointsRef.current){
+			const points = document.querySelectorAll('h1 .point');
+			const timeline = gsap.timeline({repeat: -1, repeatDelay: 0.5});
+
+			points.forEach((char,idx) => {
+				timeline
+					.fromTo(
+						char,
+						{ y: 0},
+						{ y: -15, duration: 0.3 },
+						idx * 0.15
+					)
+					.to (
+						char,
+						{ y: 0, duration: 0.3 },
+						idx * 0.15 + 0.3
+					)
+			});
+		}
+	  }, []);
+
 	return (
 		<StyledHome>
 			<div className="left">
 				<div className="img-box"></div>
 			</div>
 			<div className="right">
-				<div className="intro-area">
+				<div className="intro-area" ref={pointsRef}>
 					<Heading level="2">HELLO EVERYONE! 😁</Heading>
-					<Heading level="1">I'M {' '}
+					<Heading level="1" >I'M {' '}
 						<span className="point">W</span>
 						<span className="point">E</span>
-						<span className="point">B</span>{' '}
+						<span className="point">B</span>{' '}<br className="mobile"/>
 						<span className="point">P</span>
 						<span className="point">U</span>
 						<span className="point">B</span>
@@ -26,10 +52,10 @@ const HomeConWrap = () => {
 						<span className="point">R</span>
 					</Heading>
 					<p>
-						안녕하세요 퍼블리셔 이다혜 입니다.<br/>
-						안녕하세요 퍼블리셔 이다혜 입니다.<br/>
-						안녕하세요 퍼블리셔 이다혜 입니다.<br/>
-						안녕하세요 퍼블리셔 이다혜 입니다.<br/>
+						안녕하세요, 퍼블리싱을 사랑하는 이다혜입니다 :D <br className="pc"/>
+						새로운 기술과 프론트 엔드 개발 쪽에도 관심이 많으며, <br className="pc"/>
+						기획팀, 디자인팀, 개발팀, 퍼블리셔 동료들과 커뮤니케이션을 통해 피드백을 주고받는 것을 좋아합니다. <br className="pc"/>
+						새로운 기술에 도전하며 다양한 경험을 할 수 있는 회사에서 일하고 싶습니다.
 					</p>
 				</div>
 				<div className="info-area">
@@ -79,7 +105,7 @@ const leftMoAni1 = keyframes`
 	}
 
 	100% {
-		left: -
+		left: 0;
 	}
 `;
 const leftMoAni2 = keyframes`
@@ -147,12 +173,18 @@ const StyledHome = styled.main`
 				margin-bottom: 12px;
 				font-size: 45px;
 				font-weight: 700;
+				word-break: keep-all;
+
+				.point {
+					display: inline-block;
+				}
 			}
 			h2 {
 				font-size: 24px;
 			}
 			p {
 				padding-right: 71px;
+				word-break: keep-all;
 			}
 		}
 		.info-area {
@@ -221,6 +253,12 @@ const StyledHome = styled.main`
 				}
 			}
 		}
+	}
+	br.mobile {
+		display: none;
+	}
+	br.pc {
+		display: inline-block;;
 	}
 	
 	@media ${(props) => props.theme.laptop} {
@@ -296,6 +334,9 @@ const StyledHome = styled.main`
 				margin: 48px 0 30px 0;
 			}
 		}
+		br.pc {
+			display: none;
+		}
 	}
 
 	@media ${(props) => props.theme.smallMobile} {
@@ -303,6 +344,9 @@ const StyledHome = styled.main`
 			.img-box {
 				height: 50vh;
 			}
+		}
+		br.mobile {
+			display: inline-block;
 		}
 	}
 `;

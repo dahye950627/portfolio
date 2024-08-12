@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useEffect, useState } from "react";
 import Heading from "@/components/atoms/Heading";
 
 interface ICooperation {
@@ -25,18 +26,34 @@ type ProjectsPopupProps = {
 }
 
   const ProjectsPopup: React.FC<ProjectsPopupProps> = ({ onClose, projectData }) => {
+	const [innerHeight, setInnerHeight] = useState<string>();
+
+	useEffect(() => {
+		const handleResize = () => {
+			if (window.innerWidth < 721){
+				setInnerHeight(window.innerHeight + 'px');
+			} else {
+				setInnerHeight('80%');
+			}
+		}
+		
+		// init
+		handleResize();
+
+		window.addEventListener('resize', handleResize);
+
+		return () => window.removeEventListener('resize', handleResize);
+
+	}, []);
+
 	if (!projectData) {
 		return null;
-	}else {
-
-
-
 	}
 
 	return (
 		<ProjectsPopupStyled className="pop-wrap" role="dialog" aria-modal="true" tabIndex={-1}>
-			<div className="pop-con">
-				<div className="pop-body">
+			<div className="pop-con" style={{ height : innerHeight}}>
+				<div className="pop-body" tabIndex={0}>
 					<div className="img">
 						<img src={require(`@/assets/img/${projectData.img}.png`)} alt={`${projectData.orderer} 로고`}/>
 					</div>
@@ -110,7 +127,7 @@ const ProjectsPopupStyled = styled.div`
 
 	.pop-con {
 		position: relative;
-		width: 55%;
+		width: 45%;
 		height: 80vh;
 		background-color: #000;
 		padding: 60px 0 40px;
@@ -136,9 +153,19 @@ const ProjectsPopupStyled = styled.div`
 			}
 
 			.img {
-				margin-bottom: 24px;
+				width: 70%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-height: 200px;
+				margin: 0 auto 64px auto;
+				padding: 24px;
+				background: #fff;
+				border-radius: 10px;
+
 				img {
-					width: 100%;
+					width: 50%;
+					height: auto;
 				}
 			}
 			.info-area {
@@ -223,10 +250,9 @@ const ProjectsPopupStyled = styled.div`
 			.work-list {
 				li {
 					position: relative;
-					padding: 4px 12px 4px 30px;
+					padding: 5px 12px 5px 30px;
 					border-radius: 6px;
 					background: rgba(50, 50, 50, 0.7);
-					font-size: 14px;
 
 					& + li {
 						margin-top: 7px;
@@ -241,8 +267,6 @@ const ProjectsPopupStyled = styled.div`
 				}
 			}
 			.coop-list {
-				font-size: 14px;
-
 				li {
 					position: relative;
 					display: flex;
@@ -327,6 +351,7 @@ const ProjectsPopupStyled = styled.div`
 		.pop-con {
 			width: 100%;
 			height: 100vh;
+			padding: 60px 0 0;
 			border: none;
 
 			&:before {
@@ -338,6 +363,17 @@ const ProjectsPopupStyled = styled.div`
 				height: 16px;
 				background: #000;
 				filter: blur(9px);
+			}
+
+			.pop-body {
+				.img {
+					width: 100%;
+					margin-bottom: 36px;
+
+					img {
+						width: 60%;
+					}
+				}
 			}
 		}
 	}
