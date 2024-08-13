@@ -55,7 +55,7 @@ type ProjectsPopupProps = {
 			<div className="pop-con" style={{ height : innerHeight}}>
 				<div className="pop-body" tabIndex={0}>
 					<div className="img">
-						<img src={require(`@/assets/img/${projectData.img}.png`)} alt={`${projectData.orderer} 로고`}/>
+						<img src={require(`@/assets/img/${projectData.img}.png`)} alt={`${projectData.orderer} 로고`} style={{width : projectData.img === 'police' ? '36%' : '60%'}}/>
 					</div>
 					<div className="info-area">
 						<div className="flag">
@@ -164,7 +164,7 @@ const ProjectsPopupStyled = styled.div`
 				border-radius: 10px;
 
 				img {
-					width: 50%;
+					width: 60%;
 					height: auto;
 				}
 			}

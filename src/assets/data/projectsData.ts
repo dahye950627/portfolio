@@ -22,7 +22,7 @@ const projectsData = {
 			type: "구축",
 			period: "2023.11.01 ~ 2024.03.08",
 			month: "4개월",
-			desc: "웹 접근성 가이드를 준수하여 기존 삼성생명 WEB, 모바일 WEB 일부 메뉴의 고도화 및 모니모(모바일 APP) 앱 구축을 기존 1, 2차에 이어 3차를 진행하였습니다.",
+			desc: "웹 접근성 가이드를 준수하여 기존 삼성생명 WEB, 모바일 WEB 일부 메뉴의 고도화 및 모니모(모바일 APP) 구축을 기존 1, 2차에 이어 3차를 진행하였습니다. 기존 가이드를 사용하는 고도화 되지 않은 메뉴들이 있었기에 최대한 영향이 가지 않도록 수정하고 여러 가지를 고심하며 작업하였습니다.",
 			skill: ["Vue", "Html & SCSS","JavaScript"],
 			company: "㈜퓨즈",
 			img: "samsung",
@@ -33,7 +33,7 @@ const projectsData = {
 				"Lottie-Player.js 적용",
 				"퍼블 워크리스트 차수 별 화면 목록 필터링 기능 구현",
 				"스크립트 이슈 결함 처리",
-				"공통 가이드에 기반한 상세 화면 구현",
+				"공통 가이드에 기반한 메뉴별 상세 화면 구현",
 				"모니모 작업 내용 가이드 PPT 산출물 작업"
 			],
 			cooperation: [
@@ -51,7 +51,7 @@ const projectsData = {
 			type: "구축&개편",
 			period: "2023.03.02 ~ 2023.08.31",
 			month: "6개월",
-			desc: "웹 접근성 가이드를 준수하여 한국교직원공제회 홈페이지 전면 개편 및 모바일 APP 개발을 진행하였습니다.",
+			desc: "웹 접근성 가이드를 준수하여 한국교직원공제회 홈페이지 전면 개편 및 모바일 APP 개발을 진행하였습니다. CMS 영역이 존재하여 CMS 개발자와 손발을 맞춰가며 작업하였습니다.",
 			skill: ["Html & CSS","jQuery"],
 			company: "㈜퓨즈",
 			img: "teacher",
@@ -61,7 +61,7 @@ const projectsData = {
 				"사이트맵 구현",
 				"GNB 구현",
 				"Sortable.js 이용한 나만의 메뉴 설정 화면 구현",
-				"공통 가이드에 기반한 상세 화면 구현",
+				"공통 가이드에 기반한 메뉴별 상세 화면 구현",
 				"메인 로그인 영역 구현",
 			],
 			cooperation: [
@@ -102,7 +102,7 @@ const projectsData = {
 			type: "구축",
 			period: "2022.06.02 ~ 2022.09.30",
 			month: "4개월",
-			desc: "웹 접근성 가이드를 준수하여 SGI서울보증 신규 모바일 APP 개발을 진행하였습니다.",
+			desc: "웹 접근성 가이드를 준수하여 SGI서울보증 신규 모바일 APP 개발을 진행하였습니다. Vue로 진행하는 첫 프로젝트라 팀원 전체가 어떤 요소를 컴포넌트로 만들지, SCSS는 어떤 구조로 구성할지 고심하며 프로젝트를 진행하였습니다.",
 			skill: ["Vue","HTML & SCSS","JavaScript"],
 			company: "㈜퓨즈",
 			img: "sgi",
@@ -152,21 +152,21 @@ const projectsData = {
 			type: "구축&개편",
 			period: "2020.12.07 ~ 2021.02.14",
 			month: "2개월",
-			desc: "프로젝트 설명프로젝트 설명프로젝트 설명프로젝트 설명프로젝트 설명",
+			desc: "퍼블리셔로 진행한 첫 프로젝트로 공통 컴포넌트의 사용, 퍼블리셔의 업무 방식, 디자인&기획&개발팀 과의 협업 등 프로젝트의 전체적인 흐름에 대해서 많이 배운 프로젝트 입니다.",
 			skill: ["Html & CSS","jQuery"],
 			company: "㈜퓨즈",
 			img: "welrix",
 			work: [
-				"내가 작업한 업무 예시 1",
-				"내가 작업한 업무 예시 2",
-				"내가 작업한 업무 예시 3",
-				"내가 작업한 업무 예시 4",
-				"내가 작업한 업무 예시 5",
+				"제품 상세보기 팝업",
+				"장바구니 목록 화면",
+				"현업 피드백 수정작업",
+				"공통 가이드에 기반한 메뉴별 상세 화면 구현",
 			],
 			cooperation: [
+				{title : "개발환경", con : "Visual Studio Code"},
+				{title : "형상관리", con : "SVN"},
 				{title : "기획", con : "PowerPoint"},
-				{title : "디자인", con : "PowerPoint"},
-				{title : "형상관리", con : "PowerPoint"},
+				{title : "디자인", con : "Adobe Photoshop"},
 			]
 		},
 		{
@@ -187,6 +187,7 @@ const projectsData = {
 			],
 			cooperation: [
 				{title : "개발환경", con : "Eclipse"},
+				{title : "형상관리", con : "SVN"},
 			]
 		},
 		{
@@ -206,6 +207,7 @@ const projectsData = {
 			],
 			cooperation: [
 				{title : "개발환경", con : "Eclipse"},
+				{title : "형상관리", con : "SVN"},
 			]
 		},
 		{
@@ -227,6 +229,7 @@ const projectsData = {
 			],
 			cooperation: [
 				{title : "개발환경", con : "Eclipse"},
+				{title : "형상관리", con : "SVN"},
 			]
 		},
 	],

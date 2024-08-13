@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import styled from "styled-components";
 import projectsData from "@/assets/data/projectsData";
 import ProjectsPopup from "@/components/organisms/ProjectsPopup";
