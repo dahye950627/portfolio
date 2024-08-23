@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Heading from "@/components/atoms/Heading";
 
 interface ICooperation {
@@ -27,8 +27,13 @@ type ProjectsPopupProps = {
 
   const ProjectsPopup: React.FC<ProjectsPopupProps> = ({ onClose, projectData }) => {
 	const [innerHeight, setInnerHeight] = useState<string>();
+	const popRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
+		if (popRef.current){
+			popRef.current.focus();
+		}
+
 		const handleResize = () => {
 			if (window.innerWidth < 721){
 				setInnerHeight(window.innerHeight + 'px');
@@ -51,9 +56,9 @@ type ProjectsPopupProps = {
 	}
 
 	return (
-		<ProjectsPopupStyled className="pop-wrap" role="dialog" aria-modal="true" tabIndex={-1}>
+		<ProjectsPopupStyled className="pop-wrap" role="dialog" aria-modal="true">
 			<div className="pop-con" style={{ height : innerHeight}}>
-				<div className="pop-body" tabIndex={0}>
+				<div className="pop-body" ref={popRef} tabIndex={0}>
 					<div className="img">
 						<img src={require(`@/assets/img/${projectData.img}.png`)} alt={`${projectData.orderer} 로고`} style={{width : projectData.img === 'police' ? '36%' : '60%'}}/>
 					</div>
@@ -106,7 +111,7 @@ type ProjectsPopupProps = {
 						</ul>
 					</div>
 				</div>
-				<button type="button" className="btn-close" onClick={onClose}><span className="blind">닫기버튼</span></button>
+				<button type="button" className="btn-close" onClick={onClose}><span className="blind">닫기</span></button>
 			</div>
 		</ProjectsPopupStyled>
 	)

@@ -9,7 +9,7 @@ const AboutCertiWrap = () => {
 					<div className="certi-box" key={idx}>
 						<div className="inner">
 							<div className="icon">
-								<i className="fa-solid fa-address-card"></i>
+								<i className="fa-solid fa-address-card" aria-hidden={true}></i>
 							</div>
 							<strong className="tit">{ item.label }</strong>
 							<span className="desc">{ item.issuer }</span>

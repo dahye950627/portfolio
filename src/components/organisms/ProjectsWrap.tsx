@@ -9,7 +9,7 @@ const ProjectsWrap = () => {
 	const [selectedProject, setSelectedProject] = useState<IProjectData | null>(null);
 	const [previouslyFocusedElement, setPreviouslyFocusedElement] = useState<HTMLElement | null>(null);
 	const [activeButton, setActiveButton] = useState<number | null>(null);
-
+	
 	const projectClickHandler = (idx : number) => {
 		setSelectedProject(projectsData.projectList[idx]);
 		setPreviouslyFocusedElement(document.activeElement as HTMLElement);
@@ -51,7 +51,7 @@ const ProjectsWrap = () => {
 										}
 									</div>
 									<strong className="tit">{ data.name }</strong>
-									<p className="period"><i className="fa-solid fa-calendar-days"></i> { data.period } <span>( { data.month } )</span></p>
+									<p className="period"><i className="fa-solid fa-calendar-days" aria-hidden="true"></i> { data.period } <span>( { data.month } )</span></p>
 									<p className="desc">{ data.desc }</p>
 								</div>
 								<ul className="skill-list">

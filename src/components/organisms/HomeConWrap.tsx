@@ -9,8 +9,9 @@ const HomeConWrap = () => {
 
 	useEffect(() => {
 		if (pointsRef.current){
-			const points = document.querySelectorAll('h1 .point');
-			const timeline = gsap.timeline({repeat: -1, repeatDelay: 0.5});
+			const points = document.querySelectorAll('.intro-area .point');
+
+			const timeline = gsap.timeline({repeat: -1, repeatDelay: 0.7 });
 
 			points.forEach((char,idx) => {
 				timeline
@@ -22,8 +23,8 @@ const HomeConWrap = () => {
 					)
 					.to (
 						char,
-						{ y: 0, duration: 0.3 },
-						idx * 0.15 + 0.3
+						{ y: 0, duration: 0.3, },
+						idx * 0.15 + 0.3,
 					)
 			});
 		}
@@ -38,18 +39,20 @@ const HomeConWrap = () => {
 				<div className="intro-area" ref={pointsRef}>
 					<Heading level="2">HELLO EVERYONE! 😁</Heading>
 					<Heading level="1" >I'M {' '}
-						<span className="point">W</span>
-						<span className="point">E</span>
-						<span className="point">B</span>{' '}<br className="mobile"/>
-						<span className="point">P</span>
-						<span className="point">U</span>
-						<span className="point">B</span>
-						<span className="point">L</span>
-						<span className="point">I</span>
-						<span className="point">S</span>
-						<span className="point">H</span>
-						<span className="point">E</span>
-						<span className="point">R</span>
+						<p>
+							<span className="point">W</span>
+							<span className="point">E</span>
+							<span className="point">B</span>{' '}
+							<span className="point">P</span>
+							<span className="point">U</span>
+							<span className="point">B</span>
+							<span className="point">L</span>
+							<span className="point">I</span>
+							<span className="point">S</span>
+							<span className="point">H</span>
+							<span className="point">E</span>
+							<span className="point">R</span>
+						</p>
 					</Heading>
 					<p>
 						안녕하세요, 퍼블리싱을 사랑하는 이다혜입니다 :D <br className="pc"/>
@@ -174,9 +177,13 @@ const StyledHome = styled.main`
 				font-size: 45px;
 				font-weight: 700;
 				word-break: keep-all;
+				
+				> p {
+					display: inline;
 
-				.point {
-					display: inline-block;
+					.point {
+						display: inline-block;
+					}
 				}
 			}
 			h2 {
@@ -322,12 +329,17 @@ const StyledHome = styled.main`
 			.intro-area {
 				h1 {
 					font-size: 36px;
+
+					p {
+						display: inline-block;
+					}
 				}
 				h2 {
 					font-size: 20px;
 				}
-				p {
+				> p {
 					padding: 0;
+					font-size: 15px;
 				}
 			}
 			.info-area {

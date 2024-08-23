@@ -9,7 +9,7 @@ const AboutSkillWrap = () => {
 				<div className="skill-box" key={idx}>
 					<div className="inner">
 						<div className="left">
-							<i className={item.icon}></i>
+							<i className={item.icon} aria-hidden={true}></i>
 							<span>{ item.label }</span>
 						</div>
 						<div className="right">

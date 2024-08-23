@@ -9,7 +9,7 @@ const AboutCompWrap = () => {
 				{
 					aboutData.companyList.map((data, idx) => (
 						<li key={idx}>
-							<div className="icon">
+							<div className="icon" aria-hidden={true}>
 								<i className="fa-solid fa-building"></i>
 							</div>
 							<span className="period">{ data.period }{' '}({ data.years })</span>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import Heading from "@/components/atoms/Heading";
 
@@ -9,6 +9,12 @@ type PageHeaderProps = {
 }
 
 const PageTitle: React.FC<PageHeaderProps> = (props) => {
+	const titleRef = useRef<HTMLDivElement>(null);
+	useEffect(() => {
+		if (titleRef.current){
+			titleRef.current.focus();
+		}
+	}, []);
 
 	const textSplit = (text: string) => {
 		return text.split('').map((char, idx) => (
