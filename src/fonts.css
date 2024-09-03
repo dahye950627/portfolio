@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: 'SpoqaHanSansNeo';
+	font-style: normal;
+	font-weight: 300;
+	src: url(assets/fonts/SpoqaHanSansNeo-Light.eot);
+	src: local('SpoqaHanSansNeoLight'),
+			 url(assets/fonts/SpoqaHanSansNeo-Light.eot?#iefix) format('embedded-opentype'),
+			 url(assets/fonts/SpoqaHanSansNeo-Light.woff2) format('woff2'),
+			 url(assets/fonts/SpoqaHanSansNeo-Light.woff) format('woff'),
+			 url(assets/fonts/SpoqaHanSansNeo-Light.ttf) format('truetype');
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: 'SpoqaHanSansNeo';
+	font-style: normal;
+	font-weight: 500;
+	src: url(assets/fonts/SpoqaHanSansNeo-Medium.eot);
+	src: local('SpoqaHanSansNeoMedium'),
+			 url(assets/fonts/SpoqaHanSansNeo-Medium.eot?#iefix) format('embedded-opentype'),
+			 url(assets/fonts/SpoqaHanSansNeo-Medium.woff2) format('woff2'),
+			 url(assets/fonts/SpoqaHanSansNeo-Medium.woff) format('woff'),
+			 url(assets/fonts/SpoqaHanSansNeo-Medium.ttf) format('truetype');
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: 'SpoqaHanSansNeo';
+	font-style: normal;
+	font-weight: 700;
+	src: url(assets/fonts/SpoqaHanSansNeo-Bold.eot);
+	src: local('SpoqaHanSansNeoBold'),
+			 url(assets/fonts/SpoqaHanSansNeo-Bold.eot?#iefix) format('embedded-opentype'),
+			 url(assets/fonts/SpoqaHanSansNeo-Bold.woff2) format('woff2'),
+			 url(assets/fonts/SpoqaHanSansNeo-Bold.woff) format('woff'),
+			 url(assets/fonts/SpoqaHanSansNeo-Bold.ttf) format('truetype');
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: 'TestNational2';
+	font-style: normal;
+	font-weight: 300;
+	src: url(assets/fonts/TestNational2-Regular.otf);
+	src: local('TestNational2Regular'),
+			 url(assets/fonts/TestNational2-Regular.otf) format('opentype');
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: 'TestNational2';
+	font-style: normal;
+	font-weight: 500;
+	src: url(assets/fonts/TestNational2-Medium.otf);
+	src: local('TestNational2Medium'),
+			 url(assets/fonts/TestNational2-Medium.otf) format('opentype');
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: 'TestNational2';
+	font-style: normal;
+	font-weight: 700;
+	src: url(assets/fonts/TestNational2-Bold.otf);
+	src: local('TestNational2Bold'),
+			 url(assets/fonts/TestNational2-Bold.otf) format('opentype');
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: 'TestNational2';
+	font-style: normal;
+	font-weight: 900;
+	src: url(assets/fonts/TestNational2-Black.otf);
+	src: local('TestNational2Bold'),
+			 url(assets/fonts/TestNational2-Black.otf) format('opentype');
+	font-display: fallback;
+}

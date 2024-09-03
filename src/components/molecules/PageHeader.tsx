@@ -24,7 +24,7 @@ const PageTitle: React.FC<PageHeaderProps> = (props) => {
 
 	return (
 		<PageHeaderStyled className="page-tit">
-			<Heading level="1">
+			<Heading level="1" aria-label={`${props.text} ${props.point}`}>
 				{ textSplit(props.text) }
 				<span className="point">{' '}
 					{ textSplit(props.point) }
@@ -80,7 +80,7 @@ const PageHeaderStyled = styled.div`
 		.point {
 			padding-left: 15px;
 		}
-		> span:not(.point), .point > span {
+		span:not(.point), .point > span {
 			&:nth-child(odd) {
 				animation: ${titleBomAni} 0.65s ease 0.5s 1 normal both;
 			}

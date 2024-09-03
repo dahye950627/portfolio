@@ -39,7 +39,7 @@ const HomeConWrap = () => {
 				<div className="intro-area" ref={pointsRef}>
 					<Heading level="2">HELLO EVERYONE! 😁</Heading>
 					<Heading level="1" >I'M {' '}
-						<p>
+						<p aria-label="web publisher">
 							<span className="point">W</span>
 							<span className="point">E</span>
 							<span className="point">B</span>{' '}

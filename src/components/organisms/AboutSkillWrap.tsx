@@ -44,13 +44,12 @@ const AboutSkillStyled = styled.div`
 			border-radius: 6px;
 			background: rgba(30,30,30);
 
-				
-
 			.left {
 				display: flex;
 				align-items: center;
 
 				i {
+					min-width: 45px;
 					font-size: 42px;
 					color: ${(props) => props.theme.mainColor};
 				}
@@ -94,7 +93,7 @@ const AboutSkillStyled = styled.div`
 		}
 		
 		&:last-child {
-			.inner .txt-area i {font-size: 36px;}
+			.inner .left i {font-size: 36px;}
 		}
 	}
 
