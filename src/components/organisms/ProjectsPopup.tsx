@@ -81,7 +81,7 @@ type ProjectsPopupProps = {
 						</p>
 					</div>
 					<div className="line-box">
-						<span className="sub-tit">Tech</span>
+						<span className="sub-tit">Skill Keywords</span>
 						<ul className="skill-list">
 							{
 								projectData.skill.map((item,idx) => (
@@ -184,6 +184,7 @@ const ProjectsPopupStyled = styled.div`
 						border-radius: 3px;
 						background: #323232;
 						font-size: 14px;
+						
 					}
 					.color {
 						background: ${(props) => props.theme.mainColor};
@@ -249,6 +250,7 @@ const ProjectsPopupStyled = styled.div`
 					padding: 3px 8px;
 					border: 1px solid #fff;
 					border-radius: 3px;
+					font-weight: 300;
 					line-height: 1.2;
 				}
 			}

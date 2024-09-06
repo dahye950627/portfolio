@@ -158,7 +158,8 @@ const ProjectsWrapStyled = styled.div`
 					padding: 2px 5px;
 					border: 1px solid #fff;
 					border-radius: 3px;
-					font-size: 14px;
+					font-size: 13px;
+					font-weight: 300;
 					line-height: 1.2;
 				}
 			}
