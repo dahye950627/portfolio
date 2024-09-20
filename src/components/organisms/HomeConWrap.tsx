@@ -42,7 +42,7 @@ const HomeConWrap = () => {
 						<p aria-label="web publisher">
 							<span className="point">W</span>
 							<span className="point">E</span>
-							<span className="point">B</span>{' '}
+							<span className="point">B</span>{' '}<br className="mobile" />
 							<span className="point">P</span>
 							<span className="point">U</span>
 							<span className="point">B</span>
@@ -270,7 +270,7 @@ const StyledHome = styled.main`
 	
 	@media ${(props) => props.theme.laptop} {
 		.right {
-			padding: 0 0 0 6vw;
+			padding: 2vw 0 2vw 6vw;
 
 			.info-area {
 				ul {

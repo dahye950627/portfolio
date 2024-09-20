@@ -1,4 +1,4 @@
-import mainImg from '@/assets/img/img_main.jpg';
+import mainImg from '@/assets/img/img_main.png';
 
 const size = {
 	laptop : "1280px",
