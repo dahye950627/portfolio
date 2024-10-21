@@ -42,16 +42,18 @@ const HomeConWrap = () => {
 						<p aria-label="web publisher">
 							<span className="point">W</span>
 							<span className="point">E</span>
-							<span className="point">B</span>{' '}<br className="mobile" />
-							<span className="point">P</span>
-							<span className="point">U</span>
-							<span className="point">B</span>
-							<span className="point">L</span>
-							<span className="point">I</span>
-							<span className="point">S</span>
-							<span className="point">H</span>
-							<span className="point">E</span>
-							<span className="point">R</span>
+							<span className="point">B</span>{' '}
+							<p>
+								<span className="point">P</span>
+								<span className="point">U</span>
+								<span className="point">B</span>
+								<span className="point">L</span>
+								<span className="point">I</span>
+								<span className="point">S</span>
+								<span className="point">H</span>
+								<span className="point">E</span>
+								<span className="point">R</span>
+							</p>
 						</p>
 					</Heading>
 					<p>
@@ -180,6 +182,11 @@ const StyledHome = styled.main`
 				
 				> p {
 					display: inline;
+					padding: 0;
+
+					> p {
+						display: inline-block; 
+					}
 
 					.point {
 						display: inline-block;
@@ -189,7 +196,7 @@ const StyledHome = styled.main`
 			h2 {
 				font-size: 24px;
 			}
-			p {
+			> p {
 				padding-right: 71px;
 				word-break: keep-all;
 			}
@@ -261,9 +268,6 @@ const StyledHome = styled.main`
 			}
 		}
 	}
-	br.mobile {
-		display: none;
-	}
 	br.pc {
 		display: inline-block;;
 	}
@@ -298,7 +302,8 @@ const StyledHome = styled.main`
 			animation: none;
 
 			.img-box {
-				height: 60vh;
+				width: 100%;
+				height: 400px;
 			}
 			&:before, &:after {
 				height: 100%;
@@ -352,9 +357,18 @@ const StyledHome = styled.main`
 	}
 
 	@media ${(props) => props.theme.smallMobile} {
+		br.mobile {
+			display: inline-block;
+		}
+	}
+
+	@media ${(props) => props.theme.fold} {
 		.left {
+			padding: 20px;
+
 			.img-box {
-				height: 50vh;
+				width: 100%;
+				height: 350px;
 			}
 		}
 		br.mobile {
