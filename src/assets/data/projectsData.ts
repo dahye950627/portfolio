@@ -23,15 +23,15 @@ const projectsData = {
 			period: "2023.11.01 ~ 2024.03.08",
 			month: "4개월",
 			desc: "웹 접근성 가이드를 준수하여 기존 삼성생명 WEB, 모바일 WEB 일부 메뉴의 고도화 및 모니모(모바일 APP) 구축을 기존 1, 2차에 이어 3차를 진행하였습니다. 기존 가이드를 사용하는 고도화 되지 않은 메뉴들이 있었기에 최대한 영향이 가지 않도록 수정하고 여러 가지를 고심하며 작업하였습니다.",
-			skill: ["Vue", "Html & SCSS","JavaScript"],
+			skill: ["Vue.js", "Html & SCSS","JavaScript"],
 			company: "㈜퓨즈",
 			img: "samsung",
 			work: [
 				"모니모 디자인에 맞게 공통 스크립트 sticky 버튼영역 여백수치 수정",
-				"삼성생명(WEB) 툴팁 모니모(모바일 APP)에 맞게 컴포넌트 수정",
+				"삼성생명(WEB) 툴팁을 모니모(APP)에 맞게 툴팁 컴포넌트 수정",
 				"약관동의 스낵바 및 스크롤 이동 후 메시지 노출 구현 ",
-				"Lottie-Player.js 적용",
-				"관리자 페이지에서 관리하는 로딩화면 구현",
+				"Lottie-Player.js 전 페이지 적용",
+				"관리자 페이지에서 관리하는 로딩 화면 컴포넌트 구현",
 				"퍼블 워크리스트 차수 별 화면 목록 필터링 기능 구현",
 				"스크립트 이슈 결함 처리",
 				"공통 가이드에 기반한 메뉴별 상세 화면 구현",
@@ -61,9 +61,9 @@ const projectsData = {
 				"금융 상품 별 상세 화면 구현",
 				"사이트맵 구현",
 				"GNB 구현",
-				"Sortable.js 이용한 나만의 메뉴 설정 화면 구현",
-				"공통 가이드에 기반한 메뉴별 상세 화면 구현",
+				"Sortable.js 이용한 drag&drop 기능의 나만의 메뉴 설정 화면 구현",
 				"메인 로그인 영역 구현",
+				"공통 가이드에 기반한 메뉴별 상세 화면 구현",
 			],
 			cooperation: [
 				{title : "개발환경", con : "Eclipse"},
@@ -92,6 +92,7 @@ const projectsData = {
 			cooperation: [
 				{title : "개발환경", con : "Eclipse"},
 				{title : "형상관리", con : "SVN"},
+				{title : "프로젝트 관리", con : "Jira"},
 				{title : "기획", con : "PowerPoint"},
 				{title : "디자인", con : "Adobe Photoshop"},
 			]
@@ -109,7 +110,7 @@ const projectsData = {
 			img: "sgi",
 			work: [
 				"메인 화면 구현",
-				"영업점 안내 컴포넌트 개발",
+				"데이터의 키워드를 이용하여 노출되는 타이틀, 이미지 명을 매칭하여 영업점 안내 컴포넌트 개발",
 				"이용 안내 컴포넌트 개발",
 				"고객의 소리 메뉴 화면 구현",
 				"안내사항 메뉴 화면 구현",
@@ -118,6 +119,7 @@ const projectsData = {
 			cooperation: [
 				{title : "개발환경", con : "Visual Studio Code"},
 				{title : "형상관리", con : "SVN"},
+				{title : "프로젝트 관리", con : "Jira"},
 				{title : "기획", con : "PowerPoint"},
 				{title : "디자인", con : "Zeplin"},
 			]
@@ -158,9 +160,9 @@ const projectsData = {
 			company: "㈜퓨즈",
 			img: "welrix",
 			work: [
-				"제품 상세보기 팝업",
-				"장바구니 목록 화면",
-				"현업 피드백 수정작업",
+				"제품 상세보기 팝업 구현",
+				"장바구니 목록 화면 구현",
+				"현업 피드백 수정 작업 수행",
 				"공통 가이드에 기반한 메뉴별 상세 화면 구현",
 			],
 			cooperation: [
@@ -178,7 +180,7 @@ const projectsData = {
 			period: "2019.05.01 ~ 2019.08.31",
 			month: "4개월",
 			desc: "카카오 알림톡, KT 크로샷 메시징 서비스(SMS,LMS)를 연동하여, 신청인의 채무와 신용문제 안내를 템플릿화 하여 해당 메시지 코드와 일치하는 신청인에게 메시지를 발송하는 통합 메시징 시스템 구축하였습니다.",
-			skill: ["Html & CSS","Java","jQuery","DB(oracle)"],
+			skill: ["Java","Html & CSS","jQuery","DB(Oracle)"],
 			company: "㈜모노커뮤니케이션즈",
 			img: "credit",
 			work: [
@@ -189,6 +191,7 @@ const projectsData = {
 			cooperation: [
 				{title : "개발환경", con : "Eclipse"},
 				{title : "형상관리", con : "SVN"},
+				{title : "기획", con : "PowerPoint"},
 			]
 		},
 		{
@@ -199,16 +202,17 @@ const projectsData = {
 			period: "2019.06.01 ~ 2019.11.28",
 			month: "6개월",
 			desc: "카카오 알림톡, KT 크로샷 메시징 서비스(SMS,LMS)를 연동하여, 경찰 임무 수행 중 발생하는 비상 상황에 관한 내용을 전국경찰관서별 관리되는 조직도 기반으로 경찰관에게 전파하는 통합 메시징 시스템 구축하였습니다.",
-			skill: ["Html & CSS","Java","jQuery","DB(oracle)"],
+			skill: ["Java","Html & CSS","jQuery","DB(Oracle)"],
 			company: "㈜모노커뮤니케이션즈",
 			img: "police",
 			work: [
 				"jqGrid.js 이용하여 DB 연동 및 메시지 전송 후 성공여부, 전송시간, 도착시간 등 결과값 도출 기능 개발",
-				"dynaTree.js 이용하여 DB 연동 및 메시지 전송대상 조직도 CRUD 개발 메인 화면 구현",
+				"dynaTree.js 이용하여 DB 연동 및 메시지 전송대상 조직도 CRUD 개발",
 			],
 			cooperation: [
 				{title : "개발환경", con : "Eclipse"},
 				{title : "형상관리", con : "SVN"},
+				{title : "기획", con : "PowerPoint"},
 			]
 		},
 		{
@@ -218,8 +222,8 @@ const projectsData = {
 			type: "구축&개편",
 			period: "2018.11.01 ~ 2019.03.29",
 			month: "5개월",
-			desc: "자사 홈페이지 관리자 사이트를 구축하여, 메인 노출 콘텐츠, 부서별 메뉴 콘텐츠, 회사 연혁, 게시판 등 하드코딩으로 작업 되어있는 홈페이지의 데이터를 등록&수정&삭제&노출 여부 등을 관리할 수 있도록 구현하였습니다.",
-			skill: ["Html & CSS","Java","jQuery","DB(oracle)"],
+			desc: "자사 홈페이지 관리자 사이트를 기획 및 구축하여 메인 노출 콘텐츠, 부서별 메뉴 콘텐츠, 회사 연혁, 게시판 등 하드코딩으로 작업 되어있는 홈페이지의 데이터를 각 해당 부서에서 등록&수정&삭제&노출 여부를 관리할 수 있도록 구현하였습니다.",
+			skill: ["Java","Html & CSS","jQuery","DB(MySQL)"],
 			company: "㈜모노커뮤니케이션즈",
 			img: "mono",
 			work: [
@@ -231,6 +235,7 @@ const projectsData = {
 			cooperation: [
 				{title : "개발환경", con : "Eclipse"},
 				{title : "형상관리", con : "SVN"},
+				{title : "기획", con : "PowerPoint"},
 			]
 		},
 	],
