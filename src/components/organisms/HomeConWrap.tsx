@@ -1,4 +1,4 @@
-import  { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import Heading from "@/components/atoms/Heading";
@@ -39,11 +39,11 @@ const HomeConWrap = () => {
 				<div className="intro-area" ref={pointsRef}>
 					<Heading level="2">HELLO EVERYONE! 😁</Heading>
 					<Heading level="1" >I'M {' '}
-						<p aria-label="web publisher">
+						<em aria-label="web publisher">
 							<span className="point">W</span>
 							<span className="point">E</span>
 							<span className="point">B</span>{' '}
-							<p>
+							<span>
 								<span className="point">P</span>
 								<span className="point">U</span>
 								<span className="point">B</span>
@@ -53,8 +53,8 @@ const HomeConWrap = () => {
 								<span className="point">H</span>
 								<span className="point">E</span>
 								<span className="point">R</span>
-							</p>
-						</p>
+							</span>
+						</em>
 					</Heading>
 					<p>
 						안녕하세요, 퍼블리싱을 사랑하는 이다혜입니다 :D <br className="pc"/>
@@ -180,7 +180,7 @@ const StyledHome = styled.main`
 				font-weight: 700;
 				word-break: keep-all;
 				
-				> p {
+				> em {
 					display: inline;
 					padding: 0;
 
@@ -335,7 +335,7 @@ const StyledHome = styled.main`
 				h1 {
 					font-size: 36px;
 
-					p {
+					em {
 						display: inline-block;
 					}
 				}

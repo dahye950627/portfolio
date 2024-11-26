@@ -9,6 +9,7 @@ const ProjectsWrap = () => {
 	const [selectedProject, setSelectedProject] = useState<IProjectData | null>(null);
 	const [previouslyFocusedElement, setPreviouslyFocusedElement] = useState<HTMLElement | null>(null);
 	const [activeButton, setActiveButton] = useState<number | null>(null);
+	const [scrollbarWidth, setScrollbarWidth] = useState(0);
 	
 	const projectClickHandler = (idx : number) => {
 		setSelectedProject(projectsData.projectList[idx]);
@@ -21,14 +22,56 @@ const ProjectsWrap = () => {
 		setSelectedProject(null);
 	}
 
+	const getScrollbarWidth = () => {
+		const outer = document.createElement('div');
+		outer.style.visibility = 'hidden';
+		outer.style.width = '100px';
+		outer.style.height = '100px';
+		outer.style.overflow = 'scroll';
+		document.body.appendChild(outer);
+
+		const inner = document.createElement('div');
+		outer.appendChild(inner);
+
+		const scrollbarWidth = outer.offsetWidth - inner.offsetWidth;
+
+		document.body.removeChild(outer);
+
+		return scrollbarWidth;
+	}
+
+	const setScrollCss = () => {
+		const css = `
+			body.openPop:not(.is-device) {position: relative; padding-right: ${scrollbarWidth}px !important;}
+			body.openPop:not(.is-device):after {content: ''; position: fixed; top: 0; right: 0; width: 17px; height: 100%; background-color: #fff;} 
+		`;
+
+		const styleElement = document.createElement('style');
+		styleElement.innerHTML = css;
+		document.head.appendChild(styleElement);
+	}
+
 	useEffect(() => {
 		if(isShow) {
 			document.body.style.overflow="hidden";
+			setScrollbarWidth(getScrollbarWidth());
+			
+			if(window.innerWidth > 720){
+				document.body.classList.add('openPop');
+			}
 		}else {
 			document.body.style.overflow="auto";
+			if (window.innerWidth > 720){
+				document.body.classList.remove('openPop');
+			}
 			if (previouslyFocusedElement) previouslyFocusedElement.focus();
 		}
 	}, [isShow, previouslyFocusedElement])
+
+	useEffect(() => {
+		setScrollCss();
+		console.log('scrollbarWidth = ' + scrollbarWidth);
+	}, [])
 
 	return (
 		<>

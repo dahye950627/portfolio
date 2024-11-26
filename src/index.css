@@ -33,13 +33,13 @@ html {
 	-moz-osx-font-smoothing: grayscale;
 }
 html, body{
-	max-width:1440px;
-	margin:auto;
 	line-height:1.6;
 }
 body {
-	-webkit-text-size-adjust:none; 
-	text-size-adjust:none;
+	-webkit-text-size-adjust: none; 
+	text-size-adjust: none;
+	margin: 0;
+	background-color: #000;
 	color: #fff;
 }
 ol, ul {
@@ -96,25 +96,21 @@ ul {
 	clip:rect(1px, 1px, 1px, 1px); 
 	clip-path:inset(50%);
 }
-
-/* index */
-body {
-	margin: 0;
-	background-color: #000;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-#root main{
+main{
+	max-width:1190px;
+	margin:auto;
 	min-height: 100vh;
 }
-
 .point{
 	color: #8B03FF;
 }
 
+body.openPop:not(.is-device) header {
+	right: 27px;
+}
 
 

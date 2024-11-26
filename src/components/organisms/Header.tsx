@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
 type HeaderProps = {
-	page : string
+	page : string;
 }
 
 const Header:React.FC<HeaderProps>  = (props) => {
