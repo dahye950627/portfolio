@@ -90,6 +90,9 @@ const ProjectsWrap = () => {
 										<span>{ data.orderer }</span>
 										<span>{ data.type }</span>
 										{
+											data.employment !== "" && data.employment !== undefined ? <span>{data.employment}</span> : ""
+										}
+										{
 											data.web ? <span className="color">웹접근성마크획득</span> : null
 										}
 									</div>
@@ -137,16 +140,17 @@ const ProjectsWrapStyled = styled.div`
 			flex-direction: column;
 			justify-content: space-between;
 			height: 100%;
-			padding: 20px;
+			padding: 15px 20px 20px;
 			border: 1px solid rgba(25,25,25);
 			background: rgba(25,25,25);
 			cursor: pointer;
 
 			.info-area {
 				.flag {
+					font-size: 0;
 					span {
 						display: inline-block;
-						margin-right: 5px;
+						margin: 5px 5px 0 0;
 						padding: 2px 6px;
 						border-radius: 3px;
 						background: #323232;
